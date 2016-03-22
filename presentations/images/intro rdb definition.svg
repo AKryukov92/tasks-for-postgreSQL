@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="intro rdb definition.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748738"
+     inkscape:cx="-36.426257"
+     inkscape:cy="678.95341"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:window-width="944"
+     inkscape:window-height="1002"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4136"
+       cx="590.19019"
+       cy="569.2077"
+       rx="278.79611"
+       ry="46.466019" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.43834925;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4162"
+       cx="542.12238"
+       cy="416.23282"
+       rx="280.04156"
+       ry="64.87896" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.20912004;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 821.24618,890.8068 c 0,62.30793 -124.89001,112.8186 -278.94971,112.8186 -154.05967,0 -278.9497,-50.51067 -278.9497,-112.8186"
+       id="path4162-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.21313643px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 262.27671,411.57086 0,486.69486"
+       id="path4217"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.21313643px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 821.58507,415.30035 0,479.23587"
+       id="path4219"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4150"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion4152"><rect
+           id="rect4154"
+           width="190.91882"
+           height="63.134548"
+           x="252.03307"
+           y="217.9762" /></flowRegion><flowPara
+         id="flowPara4156" /></flowRoot>    <image
+       sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample 1.PNG"
+       xlink:href="table sample 1.PNG"
+       width="442.3912"
+       height="156.07202"
+       preserveAspectRatio="none"
+       id="image4215"
+       x="324.20926"
+       y="504.99673" />
+    <image
+       sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample 2.PNG"
+       xlink:href="table sample 2.PNG"
+       width="436.73083"
+       height="234.66138"
+       preserveAspectRatio="none"
+       id="image4226"
+       x="326.18298"
+       y="700.65637" />
+  </g>
+</svg>
