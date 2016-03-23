@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="database terminology.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4206"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#6666ff;stroke-opacity:1;fill:#6666ff;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4153"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4153-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#1324ff;fill-opacity:1;fill-rule:evenodd;stroke:#1324ff;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4153-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#1324ff;fill-opacity:1;fill-rule:evenodd;stroke:#1324ff;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-69.097817"
+     inkscape:cy="350.52513"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <image
+       sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample departments.PNG"
+       xlink:href="table sample departments.PNG"
+       width="376.875"
+       height="202.5"
+       preserveAspectRatio="none"
+       id="image4155"
+       x="308.97321"
+       y="407.9202"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#6666ff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4186"
+       width="87.142868"
+       height="207.14287"
+       x="355.71429"
+       y="404.50507"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#6666ff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4188"
+       width="333.57144"
+       height="22.142857"
+       x="352.14285"
+       y="550.21936"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#6666ff;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4190"
+       width="72.85714"
+       height="22.142857"
+       x="547.14288"
+       y="474.50507"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="346.11786"
+       y="395.92749"
+       id="text4161"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         id="tspan4163"
+         x="346.11786"
+         y="395.92749">Колонка</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="690.64862"
+       y="569.85168"
+       id="text4165"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         id="tspan4167"
+         x="690.64862"
+         y="569.85168">Строка</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="689.56677"
+       y="479.96811"
+       id="text4169"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         id="tspan4171"
+         x="689.56677"
+         y="479.96811">Ячейка</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#6666ff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 779.83776,485.16156 -154.04826,0"
+       id="path4173"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+  </g>
+</svg>

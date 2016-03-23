@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="keys example.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4153"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4153-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#1324ff;fill-opacity:1;fill-rule:evenodd;stroke:#1324ff;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4153-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#1324ff;fill-opacity:1;fill-rule:evenodd;stroke:#1324ff;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="482.32099"
+     inkscape:cy="527.27463"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <image
+       sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample departments.PNG"
+       xlink:href="table sample departments.PNG"
+       inkscape:export-ydpi="216"
+       inkscape:export-xdpi="216"
+       y="426.49164"
+       x="479.6875"
+       id="image4155"
+       preserveAspectRatio="none"
+       height="202.5"
+       width="376.875" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16.25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="140.71428"
+       y="664.505"
+       id="text4158"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         id="tspan4160"
+         x="140.71428"
+         y="664.505">Первичный</tspan><tspan
+         sodipodi:role="line"
+         x="140.71428"
+         y="684.8175"
+         id="tspan4751">ключ</tspan><tspan
+         sodipodi:role="line"
+         x="140.71428"
+         y="705.13"
+         id="tspan4162">(Primary key)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16.25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="287.03351"
+       y="663.89136"
+       id="text4158-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         x="287.03351"
+         y="663.89136"
+         id="tspan4162-9">Внешний ключ</tspan><tspan
+         sodipodi:role="line"
+         x="287.03351"
+         y="684.20386"
+         id="tspan4187">(Foreign key)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16.25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="562.03351"
+       y="661.74854"
+       id="text4158-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216"><tspan
+         sodipodi:role="line"
+         id="tspan4160-2"
+         x="562.03351"
+         y="661.74854">Первичный ключ</tspan><tspan
+         sodipodi:role="line"
+         x="562.03351"
+         y="682.06104"
+         id="tspan4162-1">(Primary key)</tspan></text>
+    <image
+       sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample employees.PNG"
+       xlink:href="table sample employees.PNG"
+       inkscape:export-ydpi="216"
+       inkscape:export-xdpi="216"
+       y="477.36221"
+       x="71.116051"
+       id="image4218"
+       preserveAspectRatio="none"
+       height="150"
+       width="380.625" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.11878181px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 130.71429,691.36221 0,-58.11338"
+       id="path4144"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#1324ff;stroke-width:1.119;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-2);stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 271.42858,688.15129 0,-58.11338"
+       id="path4144-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#1324ff;stroke-width:1.11899996;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-9)"
+       d="m 540.71428,691.72272 0,-58.11338"
+       id="path4144-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="216"
+       inkscape:export-ydpi="216" />
+  </g>
+</svg>

@@ -1,4 +1,6 @@
-﻿DROP TABLE IF EXISTS regions CASCADE;
+﻿CREATE USER education PASSWORD 'knowledge' CONNECTION LIMIT 1;
+
+DROP TABLE IF EXISTS regions CASCADE;
 DROP TABLE IF EXISTS countries CASCADE;
 DROP TABLE IF EXISTS locations CASCADE;
 DROP TABLE IF EXISTS jobs CASCADE;
@@ -79,15 +81,60 @@ CREATE TABLE job_grades (
 );
 COMMENT ON TABLE job_grades IS 'Identifies a salary range per job grade. The salary ranges do not overlap';
 
-ALTER TABLE countries ADD CONSTRAINT "countries_region_id_fkey" FOREIGN KEY (region_id) REFERENCES regions(region_id);
-ALTER TABLE locations ADD CONSTRAINT "locations_country_id_fkey" FOREIGN KEY (country_id) REFERENCES countries(country_id);
-ALTER TABLE departments ADD CONSTRAINT "departments_manager_id_fkey" FOREIGN KEY (manager_id) REFERENCES employees(employee_id);
-ALTER TABLE departments ADD CONSTRAINT "departments_location_id_fkey" FOREIGN KEY (location_id) REFERENCES locations(location_id);
-ALTER TABLE employees ADD CONSTRAINT "employees_manager_id_fkey" FOREIGN KEY (manager_id) REFERENCES employees(employee_id);
-ALTER TABLE employees ADD CONSTRAINT "employees_department_id" FOREIGN KEY (department_id) REFERENCES departments(department_id);
-ALTER TABLE employees ADD CONSTRAINT "employees_job_id" FOREIGN KEY (job_id) REFERENCES jobs(job_id);
-ALTER TABLE job_history ADD CONSTRAINT "job_history_job_id" FOREIGN KEY (job_id) REFERENCES jobs(job_id);
-ALTER TABLE job_history ADD CONSTRAINT "job_history_department_id" FOREIGN KEY (department_id) REFERENCES departments(department_id);
+ALTER TABLE countries
+	ADD CONSTRAINT "countries_region_id_fkey"
+	FOREIGN KEY (region_id)
+	REFERENCES regions(region_id)
+	ON DELETE NO ACTION;
+ALTER TABLE locations
+	ADD CONSTRAINT "locations_country_id_fkey"
+	FOREIGN KEY (country_id)
+	REFERENCES countries(country_id)
+	ON DELETE NO ACTION;
+ALTER TABLE departments
+	ADD CONSTRAINT "departments_manager_id_fkey"
+	FOREIGN KEY (manager_id)
+	REFERENCES employees(employee_id)
+	ON DELETE NO ACTION;
+ALTER TABLE departments
+	ADD CONSTRAINT "departments_location_id_fkey"
+	FOREIGN KEY (location_id)
+	REFERENCES locations(location_id)
+	ON DELETE NO ACTION;
+ALTER TABLE employees
+	ADD CONSTRAINT "employees_manager_id_fkey"
+	FOREIGN KEY (manager_id)
+	REFERENCES employees(employee_id)
+	ON DELETE NO ACTION;
+ALTER TABLE employees
+	ADD CONSTRAINT "employees_department_id"
+	FOREIGN KEY (department_id)
+	REFERENCES departments(department_id)
+	ON DELETE NO ACTION;
+ALTER TABLE employees
+	ADD CONSTRAINT "employees_job_id"
+	FOREIGN KEY (job_id)
+	REFERENCES jobs(job_id)
+	ON DELETE NO ACTION;
+ALTER TABLE job_history
+	ADD CONSTRAINT "job_history_job_id"
+	FOREIGN KEY (job_id)
+	REFERENCES jobs(job_id)
+	ON DELETE NO ACTION;
+ALTER TABLE job_history
+	ADD CONSTRAINT "job_history_department_id"
+	FOREIGN KEY (department_id)
+	REFERENCES departments(department_id)
+	ON DELETE NO ACTION;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON regions TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON countries TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON locations TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON departments TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON employees TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON jobs TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON job_history TO education;
+GRANT SELECT, INSERT, UPDATE, DELETE ON job_grades TO education;
 
 INSERT INTO regions (region_id, region_name) VALUES (1,'Europe');
 INSERT INTO regions (region_id, region_name) VALUES (2,'Americas');

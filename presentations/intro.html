@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-
+	
 		<div class="reveal">
 
 			<div class="slides">
@@ -39,21 +39,61 @@
 				<section>
 					<h3>Концепция реляционных БД</h3>
 					<ul>
-						<li>В 1970 году <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B4%D0%B4,_%D0%AD%D0%B4%D0%B3%D0%B0%D1%80">Эдгар Франк «Тед» Кодд</a> издал первую работу по реляционной модели данных</li>
-						<li>Она стала основной для Систем Управления Базами Данных (СУБД)</li>
-						<li>Компоненты реляционной модели данных:
-							<ul>
-								<li>Структура - данные в базе представляют собой набор отношений (таблиц)</li>
-								<li>Манипуляции - множество операций для изменений данных</li>
-								<li>Целостность - критерии точности и согласованности данных</li>
-							</ul>
-						</li>
+						<li>Опубликована в 1970 году </li>
+						<li>Название "A Relational Model of Data for Large Shared Data Banks"</li>
+						<li>Автор - <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B4%D0%B4,_%D0%AD%D0%B4%D0%B3%D0%B0%D1%80">Эдгар Франк «Тед» Кодд</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Компоненты реляционной модели данных:</h3>
+					<ul>
+						<li>Структура - данные в базе представляют собой набор отношений (таблиц)</li>
+						<li>Целостность - критерии точности и согласованности данных</li>
+						<li>Манипуляции - множество операций для изменений данных</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Реляционная база данных</h3>
 					<p>это множество отношений (двумерных таблиц)</p>
-					<img src="images/image4226.png" height="600" style="border:0px">
+					<img src="images/intro rdb definition.png" height="500" style="border:0px"/>
+				</section>
+				<section>
+					<h3>Целостность базы данных</h3>
+					<p>Ключ - подмножество атрибутов отношения, удовлетворяющее требованиям уникальности и минимальности.</p>
+					<p>Наименьший набор столбцов, по которым можно определить строку</p>
+				</section>
+				<section>
+					<h3>Типы ключей</h3>
+					<ul>
+						<li>Первичный ключ (Primary key) - ключ в таблице с данными, которые он идентифицирует</li>
+						<li>Внешний ключ (Foreign key) - связь с данными в другой таблице</li>
+					</ul>
+					<img src="images/keys example.png" style="border:0px;"/>
+				</section>
+				<section>
+					<h3>Основные понятия</h3>
+					<img src="images/database terminology.png" style="border:0px;"/>
+				</section>
+				<section>
+					<h3>Способ взаимодействия с базой данных</h3>
+					<p>Отправляем запрос, получаем ответ</p>
+				</section>
+				<section>
+					<h3>Типы операций SQL</h3>
+					<table>
+						<tr>
+							<td>SELECT</br>INSERT</br>UPDATE</br>DELETE</td>
+							<td>Операции над данными (DML - Data manipulation language)</td>
+						</tr>
+						<tr>
+							<td>CREATE</br>ALTER</br>DROP</br>RENAME</br>TRUNCATE</br>COMMENT</td>
+							<td>Операции над схемой данных (DDL - Data definition language)</td>
+						</tr>
+						<tr>
+							<td>GRANT</br>REVOKE</td>
+							<td>Операции с пользователями (DCL - Data control language)</td>
+						</tr>
+					</table>
 				</section>
 			</div>
 

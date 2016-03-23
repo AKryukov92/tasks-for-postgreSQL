@@ -95,9 +95,10 @@
            height="63.134548"
            x="252.03307"
            y="217.9762" /></flowRegion><flowPara
-         id="flowPara4156" /></flowRoot>    <image
+         id="flowPara4156" /></flowRoot>
+		 <image
        sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample 1.PNG"
-       xlink:href="table sample 1.PNG"
+       xlink:href="table sample countries.PNG"
        width="442.3912"
        height="156.07202"
        preserveAspectRatio="none"
@@ -106,7 +107,7 @@
        y="504.99673" />
     <image
        sodipodi:absref="C:\Users\AKryukov\Desktop\PostgreSQL\presentations\images\table sample 2.PNG"
-       xlink:href="table sample 2.PNG"
+       xlink:href="table sample departments.PNG"
        width="436.73083"
        height="234.66138"
        preserveAspectRatio="none"
