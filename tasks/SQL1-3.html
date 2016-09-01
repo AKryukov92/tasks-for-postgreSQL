@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL1-3</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL1-3</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-6.html">SQL1-6</a></li>
+				<li><a href="SQL1-7.html">SQL1-7</a></li>
+				<li><a href="SQL1-8.html">SQL1-8</a></li>
+				<li><a href="SQL1-9.html">SQL1-9</a></li>
+				<li><a href="SQL1-10.html">SQL1-10</a></li>
+				<li><a href="SQL2-1.html">SQL2-1</a></li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-8</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<li><a href="#task6">№ 6</a></li>
+				<li><a href="#task7">№ 7</a></li>
+				<li><a href="#task8">№ 8</a></li>
+				<li><a href="#task9">№ 9</a></li>
+				<li><a href="#task10">№ 10</a></li>
+				<li><a href="#task11">№ 11</a></li>
+				<li><a href="#task12">№ 12</a></li>
+				<li><a href="#task13">№ 13</a></li>
+				<li><a href="#task14">№ 14</a></li>
+				<li><a href="#task15">№ 15</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<!-- <div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li></li>
+			</ol>
+		</div> -->
+		
+	<div class="section">
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который выводит текущую дату. Подпишите колонку &quot;Сегодня&quot;</div>
+			<div class="check_single">Примерный результат:</div>
+			<div class="check_single">2016-09-01</div>
+			<div class="check_single">Всего 1 строка</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров требуется отчет отображающий код сотрудника, фамилию, зарплату и целую часть зарплаты, увеличенной на 15.5%, по каждому сотруднику.</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>last_name</th>
+					<th>salary</th>
+					<th>new salary</th>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>King</td>
+					<td>24000</td>
+					<td>27720</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Kochhar</td>
+					<td>17000</td>
+					<td>19635</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Fay</td>
+					<td>6000</td>
+					<td>6930</td>
+				</tr>
+				<tr>
+					<td>205</td>
+					<td>Higgins</td>
+					<td>12000</td>
+					<td>13860</td>
+				</tr>
+				<tr>
+					<td>206</td>
+					<td>Gietz</td>
+					<td>8300</td>
+					<td>9587</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров требуется отчет отображающий код сотрудника, фамилию, зарплату и разницу между обычной зарплатой и зарплатой, увеличенной на 15.5%.</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>last_name</th>
+					<th>salary</th>
+					<th>increase</th>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>King</td>
+					<td>24000</td>
+					<td>3720</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Kochhar</td>
+					<td>17000</td>
+					<td>2635</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>De Haan</td>
+					<td>17000</td>
+					<td>2635</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Fay</td>
+					<td>6000</td>
+					<td>930</td>
+				</tr>
+				<tr>
+					<td>205</td>
+					<td>Higgins</td>
+					<td>12000</td>
+					<td>1860</td>
+				</tr>
+				<tr>
+					<td>206</td>
+					<td>Gietz</td>
+					<td>8300</td>
+					<td>1287</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает фамилию (первые буквы должны быть заглавными, а остальные - строчными) и длину фамилии по каждому сотруднику, чьи фамилии начинаются с букв &quot;J&quot;, &quot;A&quot; или &quot;M&quot;. Подпишите колонки так, чтобы отдел кадров их понял.</div>
+			<table class="check_values">
+				<tr>
+					<th>Фамилия</th>
+					<th>Длина фамилии</th>
+				</tr>
+				<tr>
+					<td>Abel</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>Matos</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>Mourgos</td>
+					<td>7</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 3 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает фамилию (первые буквы должны быть заглавными, а остальные - строчными) и длину фамилии по каждому сотруднику, чьи фамилии начинаются с буквы, указанной пользователем. Подпишите колонки так, чтобы отдел кадров их понял.</div>
+			<div class="check_single">Указана буква &qout;H&qout;</div>
+			<table class="check_values">
+				<tr>
+					<th>Фамилия</th>
+					<th>Длина фамилии</th>
+				</tr>
+				<tr>
+					<td>Hartstein</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>Higgins</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Hunold</td>
+					<td>6</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 3 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task6"><h3>Задача</h3></a>
+			<div class="task_desc">Отдел кадров хочет узнать стаж сотрудников. Отобразите фамилию и подсчитайте количество месяцев между текущей датой и датой найма. Отсортируйте результат по возрастанию стажа. Округлите до ближайшего целого числа месяцев.</div>
+			<div class="check_single">Примерный результат</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>month_worked</th>
+				</tr>
+				<tr>
+					<td>Zlotkey</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>Mourgos</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Grant</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>Lorentz</td>
+					<td>12</td>
+				</tr>
+				<tr>
+					<td>Vargas</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>151</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task7"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте отчет, который будет выводить информацию о сотрудниках по шаблону:</div>
+			<div class="check_single">
+			$фамилия зарабатывает $зарплата ежемесячно, но мечтает о ${зарплата * 3}
+			</div>
+			<table class="check_values">
+				<tr>
+					<th>Фантазии о зарплате</th>
+				</tr>
+				<tr>
+					<td>King зарабатывает 24000 ежемесячно, но мечтает о 72000</td>
+				</tr>
+				<tr>
+					<td>Kochhar зарабатывает 17000 ежемесячно, но мечтает о 51000</td>
+				</tr>
+				<tr>
+					<td>De Haan зарабатывает 24000 ежемесячно, но мечтает о 51000</td>
+				</tr>
+				<tr>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Hartstein зарабатывает 13000 ежемесячно, но мечтает о 39000</td>
+				</tr>
+				<tr>
+					<td>Fay зарабатывает 6000 ежемесячно, но мечтает о 18000</td>
+				</tr>
+				<tr>
+					<td>Higgins зарабатывает 12000 ежемесячно, но мечтает о 36000</td>
+				</tr>
+				<tr>
+					<td>Gietz зарабатывает 8300 ежемесячно, но мечтает о 24900</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task8"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает фамилию и зарплату для всех сотрудников. К зарплате нужно слева дописывать символ &qout;*&qout; так, чтобы получилось 15 символов.</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>**********24000</td>
+				</tr>
+				<tr>
+					<td>Kochhar</td>
+					<td>**********17000</td>
+				</tr>
+				<tr>
+					<td>De Haan</td>
+					<td>**********17000</td>
+				</tr>
+				<tr>
+					<td>Hunold</td>
+					<td>***********9000</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Fay</td>
+					<td>***********6000</td>
+				</tr>
+				<tr>
+					<td>Higgins</td>
+					<td>**********12000</td>
+				</tr>
+				<tr>
+					<td>Gietz</td>
+					<td>***********8300</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строка</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task9"><h3>Задача</h3></a>
+			<div class="task_desc">Отобразите фамилию, дату найма и дату пересмотра зарплаты. Это первый понедельник после 6 месяцев работы. Подпишите колонку "Дата пересмотра". Отформатируйте по примеру.</div>
+			<div class="check_single">Wednesday, the 17 of Jun, 1987</div>
+			<table class="check_values">
+				<tr>
+					<th>Фамилия</th>
+					<th>Дата найма</th>
+					<th>Дата пересмотра</th>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>1987-06-17</td>
+					<td>Monday, the 21 of December, 1987</td>
+				</tr>
+				<tr>
+					<td>Kochhar</td>
+					<td>1989-09-21</td>
+					<td>Monday, the 26 of March, 1990</td>
+				</tr>
+				<tr>
+					<td>De Haan</td>
+					<td>1993-01-13</td>
+					<td>Monday, the 19 of July, 1993</td>
+				</tr>
+				<tr>
+					<td>Hunold</td>
+					<td>1990-01-03</td>
+					<td>Monday, the 9 of July, 1993</td>
+				</tr>
+				<tr>
+					<td>Ernst</td>
+					<td>1991-05-21</td>
+					<td>Monday, the 25 of November, 1991</td>
+				</tr>
+				<tr>
+					<td>Lorentz</td>
+					<td>1999-02-07</td>
+					<td>Monday, the 7 of February, 1999</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Higgins</td>
+					<td>1994-06-07</td>
+					<td>Monday, the 12 of December, 1994</td>
+				</tr>
+				<tr>
+					<td>Hunold</td>
+					<td>1990-06-07</td>
+					<td>Monday, the 12 of December, 1994</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task10"><h3>Задача</h3></a>
+			<div class="task_desc">Отобразите фамилию, дату найма и день недели, в который сотрудник начал работать. Отсортируйте по порядку дней недели, начиная с понедельника.</div>
+			<div class="check_single">Для уровня зарплаты 12000</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>hire_date</th>
+					<th>day</th>
+				</tr>
+				<tr>
+					<td>Grant</td>
+					<td>1999-05-24</td>
+					<td>MONDAY</td>
+				</tr>
+				<tr>
+					<td>Ernst</td>
+					<td>1991-05-21</td>
+					<td>TUESDAY</td>
+				</tr>
+				<tr>
+					<td>Mourgos</td>
+					<td>1999-11-16</td>
+					<td>TUESDAY</td>
+				</tr>
+				<tr>
+					<td>Taylor</td>
+					<td>1998-03-24</td>
+					<td>TUESDAY</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Lorentz</td>
+					<td>1999-02-07</td>
+					<td>SUNDAY</td>
+				</tr>
+				<tr>
+					<td>Fay</td>
+					<td>1997-08-17</td>
+					<td>SUNDAY</td>
+				</tr>
+				<tr>
+					<td>Matos</td>
+					<td>1998-07-09</td>
+					<td>SUNDAY</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task11"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает фамилии и комиссию. Если сотрудник не получает комиссию, напишите &quot;Комиссии нет&qout;</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>comm</th>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>Kochhar</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>...</td>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Zlotkey</td>
+					<td>0.2</td>
+				</tr>
+				<tr>
+					<td>Abel</td>
+					<td>0.3/td>
+				</tr>
+				<tr>
+					<td>Taylor</td>
+					<td>0.2</td>
+				</tr>
+				<tr>
+					<td>Grant</td>
+					<td>0.15</td>
+				</tr>
+				<tr>
+					<td>Whalen</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>Hartstein</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>Fay</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>Higgins</td>
+					<td>Комиссии нет</td>
+				</tr>
+				<tr>
+					<td>Gietz</td>
+					<td>Комиссии нет</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task12"><h3>Задача</h3></a>
+			<div class="task_desc">Напшите запрос, который показывает первые девять символов фамилии сотрудника и показывает зарплату сотрудника в виде звездочек. Чем больше зарплата, тем больше звездочек. Каждая звездочка значит тысячу денег. Отсортируйте информацию по убыванию зарплаты.</div>
+			<table class="check_values">
+				<tr>
+					<th>Сотрудники и зарплаты</th>
+				</tr>
+				<tr>
+					<td>King ************************</td>
+				</tr>
+				<tr>
+					<td>Kochhar *****************</td>
+				</tr>
+				<tr>
+					<td>De Haan *****************</td>
+				</tr>
+				<tr>
+					<td>Hartstei *************</td>
+				</tr>
+				<tr>
+					<td>Higgins ************</td>
+				</tr>
+				<tr>
+					<td>...</td>
+				</tr>
+				<tr>
+					<td>Matos **</td>
+				</tr>
+				<tr>
+					<td>Vargas **</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 2 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task13"><h3>Задача</h3></a>
+			<div class="task_desc">Используя функцию CASE WHEN THEN ELSE END замените код должности ее классом согласно следующей таблице.</div>
+			<table class="check_values">
+				<tr>
+					<th>Код должности</th>
+					<th>Класс</th>
+				</tr>
+				<tr>
+					<td>AD_PRES</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>ST_MAN</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>IT_PROG</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>SA_REP</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>E</td>
+				</tr>
+				<tr>
+					<td>любое другое значение</td>
+					<td>0</td>
+				</tr>
+			</table>
+			<table class="check_values">
+				<tr>
+					<th>Код должности</th>
+					<th>Класс</th>
+				</tr>
+				<tr>
+					<td>AC_ACCOUNT</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>AC_MGR</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>AD_ASST</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>AD_PRES</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>AD_VP</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>AD_VP</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>IT_PROG</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>IT_PROG</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>IT_PROG</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>MK_MAN</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>MK_REP</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>SA_MAN</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>SA_REP</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td>SA_REP</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td>SA_REP</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>E</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>E</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>E</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>E</td>
+				</tr>
+				<tr>
+					<td>ST_MAN</td>
+					<td>B</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 20 строк</div>
+		</div>
+	</div>
+	</body>
+</html>
