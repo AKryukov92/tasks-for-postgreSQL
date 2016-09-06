@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL1-6</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL1-3</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-3.html">SQL1-3</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-7.html">SQL1-7</a></li>
+				<li><a href="SQL1-8.html">SQL1-8</a></li>
+				<li><a href="SQL1-9.html">SQL1-9</a></li>
+				<li><a href="SQL1-10.html">SQL1-10</a></li>
+				<li><a href="SQL2-1.html">SQL2-1</a></li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-8</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<li><a href="#task6">№ 6</a></li>
+				<li><a href="#task7">№ 7</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<!-- <div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li></li>
+			</ol>
+		</div> -->
+		
+	<div class="section">
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров нужен отчет с фамилией и датой найма сотрудников - коллег по отделу сотрудника с указанной фамилией.</div>
+			<div class="check_single">Для сотрудника Zlotkey</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>hire_date</th>
+				</tr>
+				<tr>
+					<td>Abel</td>
+					<td>1996-05-11</td>
+				</tr>
+				<tr>
+					<td>Taylor</td>
+					<td>1998-03-24</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 2 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте отчет, который показывает код сотрудника, фамилию и зарплату для всех сотрудников, которые зарабатывают больше средней зарплаты. Отсортируйте в порядке возрастания зарплаты.</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>last_name</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Hunold</td>
+					<td>9000</td>
+				</tr>
+				<tr>
+					<td>149</td>
+					<td>Zlotkey</td>
+					<td>10500</td>
+				</tr>
+				<tr>
+					<td>174</td>
+					<td>Abel</td>
+					<td>11000</td>
+				</tr>
+				<tr>
+					<td>205</td>
+					<td>Higgins</td>
+					<td>12000</td>
+				</tr>
+				<tr>
+					<td>201</td>
+					<td>Hartstein</td>
+					<td>13000</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Kochhar</td>
+					<td>17000</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>De Haan</td>
+					<td>17000</td>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>King</td>
+					<td>24000</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 8 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает код и фамилию всех сотрудников, которые работают в одном отделе с сотрудником чья фамилия начинается с &quot;u&quot;</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>last_name</th>
+				</tr>
+				<tr>
+					<td>124</td>
+					<td>Mourgos</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>Rajs</td>
+				</tr>
+				<tr>
+					<td>142</td>
+					<td>Davies</td>
+				</tr>
+				<tr>
+					<td>143</td>
+					<td>Matos</td>
+				</tr>
+				<tr>
+					<td>144</td>
+					<td>Vargas</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Hunold</td>
+				</tr>
+				<tr>
+					<td>104</td>
+					<td>Ernst</td>
+				</tr>
+				<tr>
+					<td>107</td>
+					<td>Lorentz</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 8 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров нужен отчет показывающий фамилию, код отдела и код должности всех сотрудников в отделах, находящихся в локации с кодом 1700.</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>department_id</th>
+					<th>job_id</th>
+				</tr>
+				<tr>
+					<td>Whalen</td>
+					<td>10</td>
+					<td>AD_ASST</td>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>90</td>
+					<td>AD_PRES</td>
+				</tr>
+				<tr>
+					<td>Kochhar</td>
+					<td>90</td>
+					<td>AD_VP</td>
+				</tr>
+				<tr>
+					<td>De Haan</td>
+					<td>90</td>
+					<td>AD_VP</td>
+				</tr>
+				<tr>
+					<td>Higgins</td>
+					<td>110</td>
+					<td>AC_MGR</td>
+				</tr>
+				<tr>
+					<td>Gietz</td>
+					<td>110</td>
+					<td>AC_ACCOUNT</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 6 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте отчет для отдела кадров, который отображает фамилию и зарплату каждого сотрудника в подчинении у King.</div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>Kochhar</td>
+					<td>17000</td>
+				</tr>
+				<tr>
+					<td>De Haan</td>
+					<td>17000</td>
+				</tr>
+				<tr>
+					<td>Mourhos</td>
+					<td>5800</td>
+				</tr>
+				<tr>
+					<td>Zlotkey</td>
+					<td>10500</td>
+				</tr>
+				<tr>
+					<td>Hartstein</td>
+					<td>13000</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 5 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task6"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте отчет для отдела кадров, который показывает код отдела, фамилию и код должности для каждого сотрудника в отделе &quot;Executive&quot;.</div>
+			<table class="check_values">
+				<tr>
+					<th>department_id</th>
+					<th>last_name</th>
+					<th>job_id</th>
+				</tr>
+				<tr>
+					<td>90</td>
+					<td>King</td>
+					<td>AD_PRES</td>
+				</tr>
+				<tr>
+					<td>90</td>
+					<td>Kochhar</td>
+					<td>AD_VP</td>
+				</tr>
+				<tr>
+					<td>90</td>
+					<td>De Haan</td>
+					<td>AD_VP</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Davies</td>
+					<td>Mourgos</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 3 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task7"><h3>Задача</h3></a>
+			<div class="task_desc">Напишите запрос, который отображает код и фамилию всех сотрудников, которые получают зарплату выше средней и работают в одном отделе с сотрудником чья фамилия начинается с &quot;u&quot;</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>last_name</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Hunold</td>
+					<td>9000</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 1 строка</div>
+		</div>
+	</div>
+	</body>
+</html>
