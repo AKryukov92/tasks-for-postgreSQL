@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL2-1</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL2-1</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-3.html">SQL1-3</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-6.html">SQL1-6</a></li>
+				<li><a href="SQL1-7.html">SQL1-7</a></li>
+				<li><a href="SQL1-8.html">SQL1-8</a></li>
+				<li><a href="SQL1-9.html">SQL1-9</a></li>
+				<li><a href="SQL1-9.html">SQL1-10</a></li>
+				<li>SQL2-1</li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-7</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<li><a href="#task6">№ 6</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li>Как оформляется команда создания нового пользователя?</li>
+				<li>Как наделить пользователя правами создания таблицы?</li>
+				<li>Какими привилегиями можно наделить пользователя в рамках одной таблицы?</li>
+				<li>Если вы создадите таблицу, кто можно назначать привилегии другим пользователям?</li>
+				<li>Как упростить создание множества пользователей с одинаковыми привилегиями?</li>
+				<li>Как изменить свой пароль?</li>
+				<li>Как изменить пароль другого пользователя?</li>
+			</ol>
+		</div>
+		
+	<div class="section">
+		<h2>Добавление данных</h2>
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте пользователя А и дайте ему доступ на получение данных из таблицы departments.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Подключитесь к базе пользователем А и выберите данные из таблицы departments.</div>
+			<table class="check_values">
+				<tr>
+					<th>department_id</th>
+					<th>department_name</th>
+					<th>manager_id</th>
+					<th>location_id</th>
+				</tr>
+				<tr><td>10</td><td>Administration</td><td>200</td><td>1700</td></tr>
+				<tr><td>20</td><td>Marketing</td><td>201</td><td>1800</td></tr>
+				<tr><td>30</td><td>Purchasing</td><td>114</td><td>1700</td></tr>
+				<tr><td>40</td><td>Human Resources</td><td>203</td><td>2400</td></tr>
+				<tr><td>50</td><td>Shipping</td><td>121</td><td>1500</td></tr>
+				<tr><td>60</td><td>IT</td><td>103</td><td>1400</td></tr>
+				<tr><td>70</td><td>Public Relations</td><td>204</td><td>2700</td></tr>
+				<tr><td>..</td><td>..</td><td>...</td><td>...</td></tr>
+				<tr><td>250</td><td>Retail Sales</td><td></td><td>1700</td></tr>
+				<tr><td>260</td><td>Recruiting</td><td></td><td>1700</td></tr>
+				<tr><td>270</td><td>Payroll</td><td></td><td></td></tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Добавьте пользователя Б. Пользователем А добавьте отдел &quot;Education&quot; под номером 500. Пользователем Б добавьте отдел &quot;Human Resources&quot; под номером 510. Просмотрите таблицу &quot;departments&quot; пользователем А и Б.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу № 50 нужен доступ к информации по сотрудникам. Создайте представление (вью) dept50, которое содержит код, фамилию сотрудника и его код отдела. Колонки должны быть названы empno, employee, deptno. Нужно запретить редактирование данных через представление (вью).</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Отобразите содержимое представления (вью) dept50.</div>
+			<table class="check_values">
+				<tr>
+					<th>empno</th>
+					<th>employee</th>
+					<th>deptno</th>
+				</tr>
+				<tr>
+					<td>124</td>
+					<td>Mourgos</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>Rajs</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>142</td>
+					<td>Davies</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>143</td>
+					<td>Matos</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>144</td>
+					<td>Vargas</td>
+					<td>50</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task6"><h3>Задача</h3></a>
+			<div class="task_desc">Попытайтесь выполнить запрос на обновление данных через представление (вью).</div>
+		</div>
+	</div>
+	</body>
+</html>
