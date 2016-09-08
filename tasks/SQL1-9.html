@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL1-9</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL1-9</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-3.html">SQL1-3</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-6.html">SQL1-6</a></li>
+				<li><a href="SQL1-7.html">SQL1-7</a></li>
+				<li><a href="SQL1-8.html">SQL1-8</a></li>
+				<li>SQL1-9</li>
+				<li><a href="SQL1-10.html">SQL1-10</a></li>
+				<li><a href="SQL2-1.html">SQL2-1</a></li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-7</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li>Как оформить запрос создания таблицы?</li>
+				<li>Как вставить в таблицу А данные из таблицы Б?</li>
+				<li>Как удалить таблицу?</li>
+			</ol>
+		</div>
+		
+	<div class="section">
+		<h2>Добавление данных</h2>
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте таблицу &quot;dept&quot; со следующей структурой. Убедитесь, что таблица создана успешно.</div>
+			<table class="check_values">
+				<tr>
+					<th>Название колонки</th>
+					<td>id</td>
+					<td>name</td>
+				</tr>
+				<tr>
+					<th>Тип ключа</th>
+					<td>PRIMARY KEY</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>допустимы ли NULLы</th>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>таблица для внешнего ключа</th>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>колонка для внешнего ключа</th>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>тип данных</th>
+					<td>NUMERIC</td>
+					<td>CHARACTER VARYING</td>
+				</tr>
+				<tr>
+					<th>длина</th>
+					<td>7</td>
+					<td>25</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Заполните таблицу &quot;dept&quot; данными из таблицы &quot;departments&quot;. Колонки новой таблицы должны быть заполнены данными из соответствующих колонок старой таблицы.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте таблицу &quot;emp&quot; со следующей структурой. Убедитесь, что таблица создана успешно.</div>
+			<table class="check_values">
+				<tr>
+					<th>Название колонки</th>
+					<td>id</td>
+					<td>last_name</td>
+					<td>first_name</td>
+					<td>dept_id</td>
+				</tr>
+				<tr>
+					<th>Тип ключа</th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>допустимы ли NULLы</th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>таблица для внешнего ключа</th>
+					<td></td>
+					<td></td>
+					<td>dept</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>колонка для внешнего ключа</th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>id</td>
+				</tr>
+				<tr>
+					<th>тип данных</th>
+					<td>NUMERIC</td>
+					<td>CHARACTER VARYING</td>
+					<td>CHARACTER VARYING</td>
+					<td>NUMERIC</td>
+				</tr>
+				<tr>
+					<th>длина</th>
+					<td>7</td>
+					<td>25</td>
+					<td>25</td>
+					<td>7</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте таблицу &quot;employees2&quot; со структурой основанной на таблице &quot;employees&quot;. Там должны быть колонки &quot;employee_id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;department_id&quot;. Назовите колонки в новой таблице &quot;id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;dept_id&quot; соответственно.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Удалите таблицу &quot;emp&quot;.</div>
+		</div>
+	</div>
+	</body>
+</html>

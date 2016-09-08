@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL1-7</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL1-7</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-3.html">SQL1-3</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-6.html">SQL1-6</a></li>
+				<li>SQL1-7</li>
+				<li><a href="SQL1-8.html">SQL1-8</a></li>
+				<li><a href="SQL1-9.html">SQL1-9</a></li>
+				<li><a href="SQL1-10.html">SQL1-10</a></li>
+				<li><a href="SQL2-1.html">SQL2-1</a></li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-7</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li>Какие операторы комбинирования запросов существуют в sql?</li>
+			</ol>
+		</div>
+		
+	<div class="section">
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров нужен список кодов отделов, в которых нет сотрудников с должностью &quot;ST_CLERK&quot;. Используйте оператор комбинирования запросов.</div>
+			<table class="check_values">
+				<tr>
+					<th>department_id</th>
+				</tr>
+				<tr>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>80</td>
+				</tr>
+				<tr>
+					<td>90</td>
+				</tr>
+				<tr>
+					<td>110</td>
+				</tr>
+				<tr>
+					<td>190</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 7 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров нужен список стран из справочника, в которых нет отделов. Отобразите код страны и ее название. Используйте операторы комбинирования запросов для создания отчета.</div>
+			<table class="check_values">
+				<tr>
+					<th>CO</th>
+					<th>country_name</th>
+				</tr>
+				<tr>
+					<td>DE</td>
+					<td>Germany</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 1 строка</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте список кодов должностей для департамента 10, 50 и 20 в этом порядке. Отобразите код должности и код отдела с помощью операторов комбинирования запросов.</div>
+			<table class="check_values">
+				<tr>
+					<th>job_id</th>
+					<th>department_id</th>
+				</tr>
+				<tr>
+					<td>AD_ASST</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>ST_CLERK</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>ST_MAN</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>MK_MAN</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>MK_REP</td>
+					<td>20</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 5 строк</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте отчет который содержит код сотрудника и код должности тех сотрудников, у которых должность не менялась с момента найма в компанию (или вернулась к прежнему значению).</div>
+			<table class="check_values">
+				<tr>
+					<th>employee_id</th>
+					<th>job_id</th>
+				</tr>
+				<tr>
+					<td>176</td>
+					<td>SA_REP</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>AD_ASST</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 2 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Отделу кадров нужен отчет по следующим требованиям:
+			<ul>
+				<li>Фамилия и код отдела всех сотрудников независимо от того, указан ли у них отдел</li>
+				<li>Код и наименование всех отделов, независимо от того, есть ли в них сотрудники</li>
+			</ul></div>
+			<table class="check_values">
+				<tr>
+					<th>last_name</th>
+					<th>department_id</th>
+					<th>TO_CHAR(NULL)</th>
+				</tr>
+				<tr><td>Abel</td><td>80</td><td></td></tr>
+				<tr><td>Davies</td><td>50</td><td></td></tr>
+				<tr><td>De Haan</td><td>90</td><td></td></tr>
+				<tr><td>Ernst</td><td>60</td><td></td></tr>
+				<tr><td>Fay</td><td>20</td><td></td></tr>
+				<tr><td>Gietz</td><td>110</td><td></td></tr>
+				<tr><td>Grant</td><td></td><td></td></tr>
+				<tr><td>Hartstein</td><td>20</td><td></td></tr>
+				<tr><td>Higgins</td><td>110</td><td></td></tr>
+				<tr><td>Hunold</td><td>60</td><td></td></tr>
+				<tr><td>King</td><td>90</td><td></td></tr>
+				<tr><td>Kochhar</td><td>90</td><td></td></tr>
+				<tr><td>Lorentz</td><td>60</td><td></td></tr>
+				<tr><td>Matos</td><td>50</td><td></td></tr>
+				<tr><td>Mourgos</td><td>50</td><td></td></tr>
+				<tr><td>Rajs</td><td>50</td><td></td></tr>
+				<tr><td>Taylor</td><td>80</td><td></td></tr>
+				<tr><td>Vargas</td><td>50</td><td></td></tr>
+				<tr><td>Whalen</td><td>10</td><td></td></tr>
+				<tr><td>Zlotkey</td><td>80</td><td></td></tr>
+				<tr><td></td><td>10</td><td>Administration</td></tr>
+				<tr><td></td><td>20</td><td>Marketing</td></tr>
+				<tr><td></td><td>50</td><td>Shipping</td></tr>
+				<tr><td></td><td>60</td><td>IT</td></tr>
+				<tr><td></td><td>80</td><td>Sales</td></tr>
+				<tr><td></td><td>90</td><td>Executive</td></tr>
+				<tr><td></td><td>110</td><td>Accounting</td></tr>
+				<tr><td></td><td>190</td><td>Contracting</td></tr>
+			</table>
+			<div class="check_single">Всего 28 строк</div>
+		</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQL1-8</title>
+		<style>
+.check_single {
+    margin:15px;
+	border:1px solid black;
+	padding:5px;
+    width:calc(100% - 40px);
+}
+sqrt val {
+	border-top: 1px solid black;
+}
+sqrt:before {
+	content:"\221A";
+}
+.section {
+	counter-reset:section;
+}
+.section h3:after {
+	counter-increment:section;
+	content: " " counter(section);
+}
+.check_values {
+	border-collapse:collapse;
+	width:100%;
+/*	counter-reset:test_case;*/
+}
+.check_values td:first-child::before {
+/*	counter-increment:test_case;
+	content: counter(test_case);*/
+}
+.check_values td, .check_values th {
+	border:1px solid black;
+/*	text-align:center;*/
+}
+.check_values td:first-child{
+	width:40px;
+}
+.nav {
+	position:fixed;
+	top:0px;
+	right:0px;
+	margin:15px;
+	clear:both;
+}
+.nav ul{
+	list-style-type:none;
+	padding:0px;
+	float:left;
+}
+.nav li {
+	margin:2px;
+	border:1px solid black;
+}
+.nav li a {
+	display:block;
+	padding:7px;
+}
+.task_block {
+	width:80%;
+	page-break-inside:avoid;
+	display:block;
+}
+.quiz_block {
+	width:80%;
+}
+.task_desc {
+	margin:5px;
+}
+.example_image {
+	width:200px;
+}
+.lab_nav {
+	width:75%;
+	overflow:auto;
+}
+.check_values .preformatted, .preformatted {
+	font-family:monospace;
+	white-space:pre;
+	text-align:left;
+	padding:10px;
+}
+formula {
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+fraction {
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+numerator {
+	display:block;
+	border-bottom:2px solid black;
+}
+denominator {
+	display:block;
+}
+@media print {
+	.nav {
+		display:none;
+	}
+	.lab_nav {
+		display:none;
+	}
+	ol li {
+		margin-bottom:30px;
+	}
+	.quiz_block {
+		width:100%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<a name="heading"><h1>SQL1-8</h1></a>
+		<div class="lab_nav">
+			Другие темы:
+			<ul>
+				<li><a href="SQL1-1.html">SQL1-1</a></li>
+				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li><a href="SQL1-3.html">SQL1-3</a></li>
+				<li><a href="SQL1-4.html">SQL1-4</a></li>
+				<li><a href="SQL1-5.html">SQL1-5</a></li>
+				<li><a href="SQL1-6.html">SQL1-6</a></li>
+				<li><a href="SQL1-7.html">SQL1-7</a></li>
+				<li>SQL1-8</li>
+				<li><a href="SQL1-9.html">SQL1-9</a></li>
+				<li><a href="SQL1-10.html">SQL1-10</a></li>
+				<li><a href="SQL2-1.html">SQL2-1</a></li>
+				<li><a href="SQL2-2.html">SQL2-2</a></li>
+				<li><a href="SQL2-3.html">SQL2-3</a></li>
+				<li><a href="SQL2-4.html">SQL2-4</a></li>
+				<li><a href="SQL2-5.html">SQL2-5</a></li>
+				<li><a href="SQL2-6.html">SQL2-6</a></li>
+				<li><a href="SQL2-7.html">SQL2-7</a></li>
+				<li><a href="SQL2-8.html">SQL2-8</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#heading">^</a></li>
+				<li><a href="#quiz">?</a></li>
+				<li><a href="#task1">№ 1</a></li>
+				<li><a href="#task2">№ 2</a></li>
+				<li><a href="#task3">№ 3</a></li>
+				<li><a href="#task4">№ 4</a></li>
+				<li><a href="#task5">№ 5</a></li>
+				<li><a href="#task6">№ 6</a></li>
+				<li><a href="#task7">№ 7</a></li>
+				<li><a href="#task8">№ 8</a></li>
+				<li><a href="#task9">№ 9</a></li>
+				<li><a href="#task10">№ 10</a></li>
+				<li><a href="#task11">№ 11</a></li>
+				<li><a href="#task12">№ 12</a></li>
+				<li><a href="#task13">№ 13</a></li>
+				<li><a href="#task14">№ 14</a></li>
+				<li><a href="#task15">№ 15</a></li>
+				<li><a href="#task16">№ 16</a></li>
+				<li><a href="#task17">№ 17</a></li>
+				<li><a href="#task18">№ 18</a></li>
+				<li><a href="#task19">№ 19</a></li>
+				<!-- <li><a href="#task">№ </a></li> -->
+			</ul>
+		</div>
+		<div class="quiz_block">
+			<a name="quiz"><h3>Контрольные вопросы</h3></a>
+			<ol>
+				<li>Какие операции можно проводить над данными в таблицах?</li>
+				<li>Как создать копию таблицы?</li>
+				<li>Как оформлять запрос на добавление данных в таблицу?</li>
+				<li>Как оформить запрос на удаление данных из таблицы?</li>
+				<li>Как оформить запрос на изменение данных в таблице?</li>
+				<li>Что такое транзакция?</li>
+				<li>Как зафиксировать изменения в рамках транзакции?</li>
+				<li>Как отменить изменения внутри транзакции?</li>
+				<li>Как отметить промежуточную точку транзакции?</li>
+				<li>Как отменить изменения внутри транзакции до промежуточной точки?</li>
+			</ol>
+		</div>
+		
+	<div class="section">
+		<h2>Добавление данных</h2>
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Запустите скрипт prepare_my_employees.sql.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task2"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте запрос для добавления строки с данными в таблицу my_employees не указывая наименования колонок.</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>895</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Дополните таблицу my_employees данными. Используйте запросы с перечислением колонок.</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Dancs</td>
+					<td>Betty</td>
+					<td>bdancs</td>
+					<td>860</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Проверьте содержимое таблицы</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>895</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Dancs</td>
+					<td>Betty</td>
+					<td>bdancs</td>
+					<td>860</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 2 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Создайте параметризованный скрипт вставки данных. Содержимое колонки userid это первая буква имени, склеенная с первыми семью буквами фамилии.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task6"><h3>Задача</h3></a>
+			<div class="task_desc"> Добавьте в таблицу информацию еще о двух сотрудниках с помощью скрипта.</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Biri</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>750</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task7"><h3>Задача</h3></a>
+			<div class="task_desc">Проверьте содержимое таблицы</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>895</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Dancs</td>
+					<td>Betty</td>
+					<td>bdancs</td>
+					<td>860</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Biri</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>750</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 4 строки</div>
+		</div>
+		
+		<h2>Обновление и изменение данных</h2>
+		
+		<div class="task_block">
+			<a name="task8"><h3>Задача</h3></a>
+			<div class="task_desc">Измените фамилию сотрудника №3 на &quot;Drexler&quot;</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task9"><h3>Задача</h3></a>
+			<div class="task_desc">Для всех сотрудников, кто зарабатывает меньше 900, измените зарплату на 1000</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task10"><h3>Задача</h3></a>
+			<div class="task_desc">Проверьте содержимое таблицы</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Dancs</td>
+					<td>Betty</td>
+					<td>bdancs</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Drexler</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>1000</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 4 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task11"><h3>Задача</h3></a>
+			<div class="task_desc">Удалите сотрудника &quot;Betty Dancs&quot; из таблицы my_employees.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task12"><h3>Задача</h3></a>
+			<div class="task_desc">Проверьте содержимое таблицы</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Drexler</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>1000</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 3 строки</div>
+		</div>
+		
+		<h2>Ручное управление транзакциями</h2>
+		<div class="task_block">
+			<a name="task13"><h3>Задача</h3></a>
+			<div class="task_desc">Добавьте в таблицу последнего сотрудника с помощью скрипта.</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Ropeburn</td>
+					<td>Audrey</td>
+					<td>aropebur</td>
+					<td>1550</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="task_block">
+			<a name="task14"><h3>Задача</h3></a>
+			<div class="task_desc">Проверьте содержимое таблицы</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Drexler</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Ropeburn</td>
+					<td>Audrey</td>
+					<td>aropebur</td>
+					<td>1550</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 4 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task15"><h3>Задача</h3></a>
+			<div class="task_desc">Отметьте начальную точку транзакции</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task16"><h3>Задача</h3></a>
+			<div class="task_desc">Удалите все данные из таблицы</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task17"><h3>Задача</h3></a>
+			<div class="task_desc">Откатите удаление данных.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task18"><h3>Задача</h3></a>
+			<div class="task_desc">Убедитесь, что в таблице есть данные.</div>
+			<table class="check_values">
+				<tr>
+					<th>id</th>
+					<th>last_name</th>
+					<th>first_name</th>
+					<th>userid</th>
+					<th>salary</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Patel</td>
+					<td>Ralph</td>
+					<td>rpatel</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Drexler</td>
+					<td>Ben</td>
+					<td>bbiri</td>
+					<td>1100</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Newman</td>
+					<td>Chad</td>
+					<td>cnewman</td>
+					<td>1000</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Ropeburn</td>
+					<td>Audrey</td>
+					<td>aropebur</td>
+					<td>1550</td>
+				</tr>
+			</table>
+			<div class="check_single">Всего 4 строки</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task19"><h3>Задача</h3></a>
+			<div class="task_desc">Зафиксируйте изменения.</div>
+		</div>
+	</div>
+	</body>
+</html>

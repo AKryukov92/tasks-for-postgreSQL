@@ -124,6 +124,7 @@ denominator {
 			<ul>
 				<li><a href="SQL1-1.html">SQL1-1</a></li>
 				<li><a href="SQL1-2.html">SQL1-2</a></li>
+				<li>SQL1-3</li>
 				<li><a href="SQL1-4.html">SQL1-4</a></li>
 				<li><a href="SQL1-5.html">SQL1-5</a></li>
 				<li><a href="SQL1-6.html">SQL1-6</a></li>
@@ -137,7 +138,7 @@ denominator {
 				<li><a href="SQL2-4.html">SQL2-4</a></li>
 				<li><a href="SQL2-5.html">SQL2-5</a></li>
 				<li><a href="SQL2-6.html">SQL2-6</a></li>
-				<li><a href="SQL2-7.html">SQL2-8</a></li>
+				<li><a href="SQL2-7.html">SQL2-7</a></li>
 				<li><a href="SQL2-8.html">SQL2-8</a></li>
 			</ul>
 		</div>
@@ -161,12 +162,18 @@ denominator {
 				<!-- <li><a href="#task">№ </a></li> -->
 			</ul>
 		</div>
-		<!-- <div class="quiz_block">
+		<div class="quiz_block">
 			<a name="quiz"><h3>Контрольные вопросы</h3></a>
 			<ol>
-				<li></li>
+				<li>Как получить текущую дату?</li>
+				<li>Как оформить запрос на получение данных с модификацией значений в результате?</li>
+				<li>Какие операции можно применять для модификации данных?</li>
+				<li>Можно ли модифицировать данные, используя значение предыдущей/следующей колонки?</li>
+				<li>Как отформатировать дату?</li>
+				<li>Где посмотреть справку по форматам даты?</li>
+				<li>Как обработать значения NULL?</li>
 			</ol>
-		</div> -->
+		</div>
 		
 	<div class="section">
 		<div class="task_block">
@@ -310,7 +317,7 @@ denominator {
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает фамилию (первые буквы должны быть заглавными, а остальные - строчными) и длину фамилии по каждому сотруднику, чьи фамилии начинаются с буквы, указанной пользователем. Подпишите колонки так, чтобы отдел кадров их понял.</div>
-			<div class="check_single">Указана буква &qout;H&qout;</div>
+			<div class="check_single">Указана буква &quot;H&quot;</div>
 			<table class="check_values">
 				<tr>
 					<th>Фамилия</th>
@@ -335,8 +342,10 @@ denominator {
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
 			<div class="task_desc">Отдел кадров хочет узнать стаж сотрудников. Отобразите фамилию и подсчитайте количество месяцев между текущей датой и датой найма. Отсортируйте результат по возрастанию стажа. Округлите до ближайшего целого числа месяцев.</div>
-			<div class="check_single">Примерный результат</div>
 			<table class="check_values">
+				<tr>
+					<th colspan="2">Примерный результат</th>
+				</tr>
 				<tr>
 					<th>last_name</th>
 					<th>month_worked</th>
@@ -413,7 +422,7 @@ denominator {
 		
 		<div class="task_block">
 			<a name="task8"><h3>Задача</h3></a>
-			<div class="task_desc">Напишите запрос, который отображает фамилию и зарплату для всех сотрудников. К зарплате нужно слева дописывать символ &qout;*&qout; так, чтобы получилось 15 символов.</div>
+			<div class="task_desc">Напишите запрос, который отображает фамилию и зарплату для всех сотрудников. К зарплате нужно слева дописывать символ &quot;*&quot; так, чтобы получилось 15 символов.</div>
 			<table class="check_values">
 				<tr>
 					<th>last_name</th>
@@ -570,7 +579,7 @@ denominator {
 		
 		<div class="task_block">
 			<a name="task11"><h3>Задача</h3></a>
-			<div class="task_desc">Напишите запрос, который отображает фамилии и комиссию. Если сотрудник не получает комиссию, напишите &quot;Комиссии нет&qout;</div>
+			<div class="task_desc">Напишите запрос, который отображает фамилии и комиссию. Если сотрудник не получает комиссию, напишите &quot;Комиссии нет&quot;</div>
 			<table class="check_values">
 				<tr>
 					<th>last_name</th>
@@ -696,8 +705,10 @@ denominator {
 					<td>0</td>
 				</tr>
 			</table>
-			<div>Примерный результат</div>
 			<table class="check_values">
+				<tr>
+					<th colspan="2">Примерный результат</th>
+				</tr>
 				<tr>
 					<th>Код должности</th>
 					<th>Категория</th>
