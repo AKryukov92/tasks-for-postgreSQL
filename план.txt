@@ -1,0 +1,114 @@
+1-1. select
+select определенных колонок
+select с псевдонимом
+select distinct
+select с конкатенациями
+
+1-2. select
+where != = < > <= >=
+where OR|AND
+order
+!!!!!!!!!!limit + offset
+!!!!!!!!!!copy to file
+parametrized from console
+
+1-3. select
+date functions
+where cell function
+where in
+date diff
+lpad
+order by псевдоним
+
+1-4. select
+group by
+aggregate functions (sum, count, max, min, avg)
+
+1-5. select
+join (inner, left, right)
+join by where =
+!!!!!!!!!!join 2+ таблиц
+join ту же таблицу
+
+1-6. select
+join subquery
+
+1-7. select
+union
+minus
+
+1-8. insert, update
+default columns
+named columns
+parametrized
+!!!!!!!!!!!with sequence for column
+!!!!!!!!!!!with default value
+update where id
+update complex where
+delete by id
+
+begin transaction
+savepoint
+!!!!!!!!!!!rollback
+rollback to savepoint
+commit
+
+1-9. create table
+structured no data
+create by select
+insert by select
+drop table
+
+1-10 create views
+updateable
+insert to updateable
+pseudonims
+
+1-11 select system tables
+alter table comment
+sql of views
+sequence info
+
+2-1 create user
+grant insert, select, update, delete
+revoke
+
+2-2 physical
+find file
+
+alter table add primary key
+alter table add foreign key
+alter table add conditional constraint
+!!!!!!!!!!alter table add not null constraint
+!!!!!!!!!!alter table add column
+
+2-3 
+load data from file
+??????????pivoting insert
+??????????row history
+
+2-4
+rollup
+cube
+grouping sets
+
+2-5
+alter session date format
+locale information
+timestamp type
+timestamp operations
+
+2-6
+complex select conditions
+
+2-7
+hierarchical query
+recursive queries
+
+2-8
+where regexp
+
+
+?-? windowing functions
+lag, lead
+whitelist+star join

@@ -165,6 +165,7 @@ denominator {
 				<li>Как упростить создание множества пользователей с одинаковыми привилегиями?</li>
 				<li>Как изменить свой пароль?</li>
 				<li>Как изменить пароль другого пользователя?</li>
+				<li>Как отозвать права у пользователя?</li>
 			</ol>
 		</div>
 		
@@ -201,54 +202,40 @@ denominator {
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
-			<div class="task_desc">Добавьте пользователя Б. Пользователем А добавьте отдел &quot;Education&quot; под номером 500. Пользователем Б добавьте отдел &quot;Human Resources&quot; под номером 510. Просмотрите таблицу &quot;departments&quot; пользователем А и Б.</div>
+			<div class="task_desc">Добавьте пользователя Б с правами добавления данных в таблицу &quot;departments&quot;.</div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Отделу № 50 нужен доступ к информации по сотрудникам. Создайте представление (вью) dept50, которое содержит код, фамилию сотрудника и его код отдела. Колонки должны быть названы empno, employee, deptno. Нужно запретить редактирование данных через представление (вью).</div>
+			<div class="task_desc">Добавьте пользователю А права на добавление данных в таблицу &quot;departments&quot;.</div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите содержимое представления (вью) dept50.</div>
-			<table class="check_values">
-				<tr>
-					<th>empno</th>
-					<th>employee</th>
-					<th>deptno</th>
-				</tr>
-				<tr>
-					<td>124</td>
-					<td>Mourgos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>141</td>
-					<td>Rajs</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>142</td>
-					<td>Davies</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>143</td>
-					<td>Matos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>144</td>
-					<td>Vargas</td>
-					<td>50</td>
-				</tr>
-			</table>
+			<div class="task_desc">Пользователем А добавьте отдел &quot;Education&quot; под номером 500. Пользователем Б добавьте отдел &quot;Human Resources&quot; под номером 510. Просмотрите таблицу &quot;departments&quot; пользователем А и Б.</div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
-			<div class="task_desc">Попытайтесь выполнить запрос на обновление данных через представление (вью).</div>
+			<div class="task_desc">Просмотрите список всех таблиц с помощью запроса</div>
+			<div class="check_single">
+				SELECT * FROM pg_catalog.pg_tables;
+			</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task6"><h3>Задача</h3></a>
+			<div class="task_desc">Просмотрите список таблиц, которыми владеет пользователь А. Имя пользователя хранится в переменной &quot;current_user&quot; или &quot;user&quot;.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task7"><h3>Задача</h3></a>
+			<div class="task_desc">Отзовите права на &quot;SELECT&quot; у пользователя Б.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task8"><h3>Задача</h3></a>
+			<div class="task_desc">Удалите данные из таблицы &quot;departments&quot;, добавленные в этой лабораторной.</div>
 		</div>
 	</div>
 	</body>
