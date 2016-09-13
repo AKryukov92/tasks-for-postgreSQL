@@ -1,4 +1,6 @@
 1-1. select
+pgadmin - table structure
+pgadmin - run query
 select определенных колонок
 select с псевдонимом
 select distinct
@@ -9,8 +11,16 @@ where != = < > <= >=
 where OR|AND
 order
 !!!!!!!!!!limit + offset
-!!!!!!!!!!copy to file
-parametrized from console
+----------copy to file много ненужных проблем с правами на файл
+cmd - set path
+cmd - run script
+	psql -d human_resources -U postgres -f simple_select.sql
+cmd - out to file
+	psql -d human_resources -U postgres -f simple_select.sql > result.csv
+name params
+	psql -d human_resources -U postgres -f simple_select.sql -v tbl=departments > result.csv
+cmd - set named params
+	psql -d human_resources -U postgres -f simple_select.sql -t -A -F "," -v tbl=departments > result.csv
 
 1-3. select
 date functions

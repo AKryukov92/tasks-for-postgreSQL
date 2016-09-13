@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -160,6 +163,7 @@ denominator {
 				<li>Как узнать структуру таблицы?</li>
 				<li>Как выполнить запрос к таблице?</li>
 				<li>Какие выражения обязательно должны быть в запросе на получение данных из таблицы?</li>
+				<li>Как изменить порядок колонок в результате?</li>
 				<li>Как выбрать строки из таблицы без повторений?</li>
 				<li>Как переименовывать колонки в результате запроса на получение данных?</li>
 				<li>Как можно объединять значения нескольких колонок в одну?</li>
@@ -178,7 +182,18 @@ denominator {
 				</tr>
 				<tr>
 					<td></td>
+					<td class="preformatted">SELECT FROM employees;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
 					<td class="preformatted">SELECT last_name, job_id, salary AS Sal
+FROM employees;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="preformatted">SELECT last_name, job_id, department_id,
 FROM employees;</td>
 					<td></td>
 				</tr>
@@ -197,49 +212,18 @@ FROM employees;</td>
 			</table>
 		</div>
 	</div>
+	
 	<div class="section">
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
-			<div class="task_desc">Написать запрос для получения фамилии, код должности, дату приема и код сотрудника. Первой колонкой должен быть код сотрудника. Укажите псевдоним STARTDATE для колонки HIRE_DATE.</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>job_id</th>
-					<th>startdate</th>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td>King</td>
-					<td>AD_PRES</td>
-					<td>1987-06-17</td>
-				</tr>
-				<tr>
-					<td>101</td>
-					<td>Kochhar</td>
-					<td>AD_VP</td>
-					<td>1989-09-21</td>
-				</tr>
-				<tr>
-					<td>102</td>
-					<td>De Haan</td>
-					<td>AD_VP</td>
-					<td>1993-01-13</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>206</td>
-					<td>Gietz</td>
-					<td>AC_ACCOUNT</td>
-					<td>1994-06-07</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<div class="task_desc">Написать запрос для получения всей информации о сотруднике.</div>
+			<iframe src="../results/part1lab1task1.html"></iframe>
+		</div>
+		
+		<div class="task_block">
+			<a name="task1"><h3>Задача</h3></a>
+			<div class="task_desc">Написать запрос для получения фамилии, кода должности, даты приема и кода сотрудника. Первой колонкой должен быть код сотрудника. Укажите псевдоним STARTDATE для колонки HIRE_DATE.</div>
+			<iframe src="../results/part1lab1task2.html"></iframe>
 		</div>
 		
 		<div class="task_block">
