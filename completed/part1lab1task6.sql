@@ -1,0 +1,2 @@
+select employee_id || ',' || first_name || ',' || last_name || ',' || email || ',' || phone_number || ',' || job_id || ',' || hire_date || ',' || salary || ',' || COALESCE(commission_pct,0) || ',' || department_id as "Результат"
+from employees;
