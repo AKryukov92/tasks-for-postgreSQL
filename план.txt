@@ -26,7 +26,7 @@ cmd - set named params
 date functions
 where cell function
 where in
-date diff
+???????????date diff в постгресе разница в датах только в днях
 lpad
 order by псевдоним
 
