@@ -1,11 +1,11 @@
 echo off
 cd ../results
 
-for %%f in (part1lab1*.html) do del %%~nf.html
+for %%f in (lab01*.html) do del %%~nf.html
 
 cd ../completed
 
-for %%f in (part1lab1*.sql) do (
+for %%f in (lab01*.sql) do (
 psql -d human_resources -U postgres -f %%~nf.sql -H -F "," > %%~nf.raw
 echo ^<html^>^<head^>^<meta charset='utf-8'/^>^</head^>^<body^> > %%~nf.html
 type %%~nf.raw >> %%~nf.html

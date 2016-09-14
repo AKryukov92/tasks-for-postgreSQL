@@ -213,7 +213,7 @@ INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, 
 INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
 	VALUES (142,'Curtis','Davies','CDAVIES','650.121.2994','29-JAN-97','ST_CLERK',3100,NULL,124,50);
 INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
-	VALUES (143,'Randall','Matos','RMATOS','650.121.2874','09-JUL-98','ST_CLERK',2600,NULL,124,50);
+	VALUES (143,'Randall','Matos','RMATOS','650.121.2874','15-MAR-98','ST_CLERK',2600,NULL,124,50);
 INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
 	VALUES (144,'Peter','Vargas','PVARGAS','650.121.2004','09-JUL-98','ST_CLERK',2500,NULL,124,50);
 INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)

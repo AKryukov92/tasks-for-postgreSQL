@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -184,447 +187,97 @@ denominator {
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров потребовался отчет - список сотрудников, которые зарабатывают более чем 12000 денег.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>24000</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>13000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task01.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет, который покажет фамилию и код отдела для сотрудника с кодом 176.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>80</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 1 строка</div>
+			<iframe src="../results/lab02task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров понадобилось узнать сотрудников с высокой и с низкой зарплатой. Нужно найти тех, у кого з\п не входит в диапазон от 5000 до 12000 денег.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>24000</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>3500</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>3100</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>2600</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>2500</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>440</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>13000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 10 строк</div>
+			<iframe src="../results/lab02task03.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет и покажите в нем фамилию, код должности и дату начала работы для сотрудников с фамилией Matos и Taylor. Отсортируйте результат по возрастанию даты приема на работу.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>job_id</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>ST_CLERK</td>
-					<td>1998-07-09</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>SA_REP</td>
-					<td>1998-03-24</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="../results/lab02task04.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
 			<div class="task_desc">Покажите фамилию и код отдела всех сотрудников в департаментах 20 или 50 в алфавитном порядке по возрастанию.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>50</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 7 строк</div>
+			<iframe src="../results/lab02task05.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
 			<div class="task_desc">Дополните предыдущий запрос и покажите фамилию и код отдела всех сотрудников с зарплатой в диапазоне от 5000 до 12000 денег и в департаментах 20 или 50 в алфавитном порядке по возрастанию.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>50</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="../results/lab02task06.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужны фамилии и даты найма сотрудников нанятых в 1994 году.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>1994-06-07</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>1994-06-07</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="../results/lab02task07.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task8"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет с фамилиями и кодами должностей тех сотрудников, у которых нет начальника.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>AD_PRES</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 1 строка</div>
+			<iframe src="../results/lab02task08.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task9"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет с фамилией, зарплатой и процентом комиссии всех сотрудников, которые получают комиссию. Отсортируйте данные по убыванию зарплаты и комиссии.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-					<th>commission_pct</th>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>11000</td>
-					<td>0.3</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>10500</td>
-					<td>0.2</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>8600</td>
-					<td>0.2</td>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>7000</td>
-					<td>0.15</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task09.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task10"><h3>Задача</h3></a>
 			<div class="task_desc">Сотрудники отдела кадров хотят более гибкий отчет. Они хотят видеть фамилию и зарплату сотрудников, у которых з/п выше указанного уровня. Построение отчета придется запускать из консоли.</div>
 			<div class="check_single">Для уровня зарплаты 12000</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>24000</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>13000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task10.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task11"><h3>Задача</h3></a>
 			<div class="task_desc">Отдел кадров хочет смотреть отчеты по менеджерам. Создайте запрос, показывающий код сотрудника, фамилию, зарплату, код отдела для указанного менеджера. Они также хотят указывать колонку для сортировки.</div>
 			<div class="check_single">Для менеджера 103, отсортированное по last_name</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>salary</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>104</td>
-					<td>Ernst</td>
-					<td>6000</td>
-					<td>60</td>
-				</tr>
-				<tr>
-					<td>107</td>
-					<td>Lorentz</td>
-					<td>4200</td>
-					<td>60</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="../results/lab02task11a.html"></iframe>
 			<div class="check_single">Для менеджера 201, отсортированное по salary</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>salary</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>202</td>
-					<td>Fay</td>
-					<td>6000</td>
-					<td>20</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 1 строка</div>
+			<iframe src="../results/lab02task11b.html"></iframe>
 			<div class="check_single">Для менеджера 124, отсортированное по employee_id</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>salary</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>141</td>
-					<td>Rajs</td>
-					<td>3500</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>142</td>
-					<td>Davies</td>
-					<td>3100</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>143</td>
-					<td>Matos</td>
-					<td>2600</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>144</td>
-					<td>Vargas</td>
-					<td>2500</td>
-					<td>50</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строк</div>
+			<iframe src="../results/lab02task11c.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task12"><h3>Задача</h3></a>
 			<div class="task_desc">Отобразите список фамилий сотрудников, у которых третья буква фамилии &quot;a&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-				</tr>
-				<tr>
-					<td>Grant</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="../results/lab02task12.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task13"><h3>Задача</h3></a>
 			<div class="task_desc">Отобразите список сотрудников, у которых в фамилии есть и буква &quot;a&quot; и буква &quot;e&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-				</tr>
-				<tr>
-					<td>Davies</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task13.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task14"><h3>Задача</h3></a>
 			<div class="task_desc">Отобразите фамилию, код должности и зарплату для всех сотрудников, чьи должности это Sales representative или stock clerk и чьи зарплаты не равны 2500, 3500 или 7000 денег.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>job_id</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>SA_REP</td>
-					<td>11000</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>SA_REP</td>
-					<td>8600</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>ST_CLERK</td>
-					<td>3100</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>ST_CLERK</td>
-					<td>2600</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task14.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task15"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет по фамилии, зарплате и комиссии для всех сотрудников, чья комиссия составляет 20%.</div>
-			<table class="check_values">
-				<tr>
-					<th>Фамилия</th>
-					<th>Заработная плата</th>
-					<th>Комиссия</th>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>10500</td>
-					<td>0.2</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>8600</td>
-					<td>0.2</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 4 строки</div>
+			<iframe src="../results/lab02task15.html"></iframe>
 		</div>
 	</div>
 	</body>
