@@ -45,7 +45,8 @@ join subquery
 
 1-7. select
 union
-minus
+except и intersect можно написать через join или where (not) in, но там может быть разница в производительности. нужно отдельное исследование на конкретных данных
+
 
 1-8. insert, update
 default columns
