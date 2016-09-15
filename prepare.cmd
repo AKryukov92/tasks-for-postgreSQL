@@ -1,4 +1,5 @@
 echo off
+cd tasks/%1
 for %%f in (*.html) do del %%~nf.html
 
 for %%f in (*.sql) do (
