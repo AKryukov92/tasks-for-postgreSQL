@@ -171,7 +171,7 @@ denominator {
 				<li>Как получить текущую дату?</li>
 				<li>Как оформить запрос на получение данных с модификацией значений в результате?</li>
 				<li>Какие операции можно применять для модификации данных?</li>
-				<li>Можно ли модифицировать данные, используя значение предыдущей/следующей колонки?</li>
+				<li>Можно ли модифицировать данные, используя значение предыдущей/следующей строки?</li>
 				<li>Как отформатировать дату?</li>
 				<li>Где посмотреть справку по форматам даты?</li>
 				<li>Как обработать значения NULL?</li>
@@ -213,7 +213,7 @@ denominator {
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
-			<div class="task_desc">Отдел кадров хочет узнать стаж сотрудников. Отобразите фамилию и подсчитайте приблизительное количество месяцев между текущей датой и датой найма. Отсортируйте результат по возрастанию стажа.</div>
+			<div class="task_desc">Отдел кадров хочет узнать стаж сотрудников. Отобразите фамилию и подсчитайте приблизительное количество месяцев между текущей датой и датой найма. Период в днях поделите на 30. Отсортируйте результат по возрастанию стажа.</div>
 			<iframe src="../results/lab03task06.html"></iframe>
 		</div>
 		
@@ -223,288 +223,38 @@ denominator {
 			<div class="check_single">
 			$фамилия зарабатывает $зарплата ежемесячно, но мечтает о ${зарплата * 3}
 			</div>
-			<table class="check_values">
-				<tr>
-					<th>Фантазии о зарплате</th>
-				</tr>
-				<tr>
-					<td>King зарабатывает 24000 ежемесячно, но мечтает о 72000</td>
-				</tr>
-				<tr>
-					<td>Kochhar зарабатывает 17000 ежемесячно, но мечтает о 51000</td>
-				</tr>
-				<tr>
-					<td>De Haan зарабатывает 24000 ежемесячно, но мечтает о 51000</td>
-				</tr>
-				<tr>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Hartstein зарабатывает 13000 ежемесячно, но мечтает о 39000</td>
-				</tr>
-				<tr>
-					<td>Fay зарабатывает 6000 ежемесячно, но мечтает о 18000</td>
-				</tr>
-				<tr>
-					<td>Higgins зарабатывает 12000 ежемесячно, но мечтает о 36000</td>
-				</tr>
-				<tr>
-					<td>Gietz зарабатывает 8300 ежемесячно, но мечтает о 24900</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<iframe src="../results/lab03task07.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task8"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает фамилию и зарплату для всех сотрудников. К зарплате нужно слева дописывать символ &quot;*&quot; так, чтобы получилось 15 символов.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>**********24000</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>**********17000</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>**********17000</td>
-				</tr>
-				<tr>
-					<td>Hunold</td>
-					<td>***********9000</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>***********6000</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>**********12000</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>***********8300</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строка</div>
+			<iframe src="../results/lab03task08.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task9"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите фамилию, дату найма и дату пересмотра зарплаты. Это первый понедельник после 6 месяцев работы. Подпишите колонку "Дата пересмотра". Отформатируйте по примеру.</div>
-			<div class="check_single">Wednesday, the 17 of Jun, 1987</div>
-			<table class="check_values">
-				<tr>
-					<th>Фамилия</th>
-					<th>Дата найма</th>
-					<th>Дата пересмотра</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>1987-06-17</td>
-					<td>Monday, the 21 of December, 1987</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>1989-09-21</td>
-					<td>Monday, the 26 of March, 1990</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>1993-01-13</td>
-					<td>Monday, the 19 of July, 1993</td>
-				</tr>
-				<tr>
-					<td>Hunold</td>
-					<td>1990-01-03</td>
-					<td>Monday, the 9 of July, 1993</td>
-				</tr>
-				<tr>
-					<td>Ernst</td>
-					<td>1991-05-21</td>
-					<td>Monday, the 25 of November, 1991</td>
-				</tr>
-				<tr>
-					<td>Lorentz</td>
-					<td>1999-02-07</td>
-					<td>Monday, the 7 of February, 1999</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>1994-06-07</td>
-					<td>Monday, the 12 of December, 1994</td>
-				</tr>
-				<tr>
-					<td>Hunold</td>
-					<td>1990-06-07</td>
-					<td>Monday, the 12 of December, 1994</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<div class="task_desc">Отобразите фамилию, дату найма и дату аттестации. Это первый понедельник после 6 месяцев работы. Подпишите колонку &quot;Дата аттестации&quot;. Отформатируйте по примеру.</div>
+			<div class="check_single">Wednesday, the 17 of June, 1987</div>
+			<iframe src="../results/lab03task09.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task10"><h3>Задача</h3></a>
 			<div class="task_desc">Отобразите фамилию, дату найма и день недели, в который сотрудник начал работать. Отсортируйте по порядку дней недели, начиная с понедельника.</div>
-			<div class="check_single">Для уровня зарплаты 12000</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-					<th>day</th>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>1999-05-24</td>
-					<td>MONDAY</td>
-				</tr>
-				<tr>
-					<td>Ernst</td>
-					<td>1991-05-21</td>
-					<td>TUESDAY</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>1999-11-16</td>
-					<td>TUESDAY</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>1998-03-24</td>
-					<td>TUESDAY</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Lorentz</td>
-					<td>1999-02-07</td>
-					<td>SUNDAY</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>1997-08-17</td>
-					<td>SUNDAY</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>1998-07-09</td>
-					<td>SUNDAY</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<iframe src="../results/lab03task10.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task11"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает фамилии и комиссию. Если сотрудник не получает комиссию, напишите &quot;Комиссии нет&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>comm</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>0.2</td>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>0.3</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>0.2</td>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>0.15</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>Комиссии нет</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>Комиссии нет</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<iframe src="../results/lab03task11.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task12"><h3>Задача</h3></a>
-			<div class="task_desc">Напшите запрос, который показывает первые девять символов фамилии сотрудника и показывает зарплату сотрудника в виде звездочек. Чем больше зарплата, тем больше звездочек. Каждая звездочка значит тысячу денег. Отсортируйте информацию по убыванию зарплаты.</div>
-			<table class="check_values">
-				<tr>
-					<th>Сотрудники и зарплаты</th>
-				</tr>
-				<tr>
-					<td>King ************************</td>
-				</tr>
-				<tr>
-					<td>Kochhar *****************</td>
-				</tr>
-				<tr>
-					<td>De Haan *****************</td>
-				</tr>
-				<tr>
-					<td>Hartstei *************</td>
-				</tr>
-				<tr>
-					<td>Higgins ************</td>
-				</tr>
-				<tr>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Matos **</td>
-				</tr>
-				<tr>
-					<td>Vargas **</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<div class="task_desc">Напишите запрос, который показывает первые девять символов фамилии сотрудника и показывает зарплату сотрудника в виде звездочек. Чем больше зарплата, тем больше звездочек. Каждая звездочка значит тысячу денег. Отсортируйте информацию по убыванию зарплаты.</div>
+			<iframe src="../results/lab03task12.html"></iframe>
 		</div>
 		
 		<div class="task_block">
@@ -540,96 +290,7 @@ denominator {
 					<td>0</td>
 				</tr>
 			</table>
-			<table class="check_values">
-				<tr>
-					<th colspan="2">Примерный результат</th>
-				</tr>
-				<tr>
-					<th>Код должности</th>
-					<th>Категория</th>
-				</tr>
-				<tr>
-					<td>AC_ACCOUNT</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>AC_MGR</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>AD_ASST</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>AD_PRES</td>
-					<td>A</td>
-				</tr>
-				<tr>
-					<td>AD_VP</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>AD_VP</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>IT_PROG</td>
-					<td>C</td>
-				</tr>
-				<tr>
-					<td>IT_PROG</td>
-					<td>C</td>
-				</tr>
-				<tr>
-					<td>IT_PROG</td>
-					<td>C</td>
-				</tr>
-				<tr>
-					<td>MK_MAN</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>MK_REP</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>SA_MAN</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>SA_REP</td>
-					<td>D</td>
-				</tr>
-				<tr>
-					<td>SA_REP</td>
-					<td>D</td>
-				</tr>
-				<tr>
-					<td>SA_REP</td>
-					<td>D</td>
-				</tr>
-				<tr>
-					<td>ST_CLERK</td>
-					<td>E</td>
-				</tr>
-				<tr>
-					<td>ST_CLERK</td>
-					<td>E</td>
-				</tr>
-				<tr>
-					<td>ST_CLERK</td>
-					<td>E</td>
-				</tr>
-				<tr>
-					<td>ST_CLERK</td>
-					<td>E</td>
-				</tr>
-				<tr>
-					<td>ST_MAN</td>
-					<td>B</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<iframe src="../results/lab03task13.html"></iframe>
 		</div>
 	</div>
 	</body>
