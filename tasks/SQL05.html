@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -174,588 +177,55 @@ denominator {
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос для вывода адресов каждого отдела.</div>
-			<table class="check_values">
-				<tr>
-					<th>location_id</th>
-					<th>street_address</th>
-					<th>city</th>
-					<th>state_province</th>
-					<th>country_name</th>
-				</tr>
-				<tr>
-					<td>1400</td>
-					<td>2014 Jabberwocky Rd</td>
-					<td>Southlake</td>
-					<td>Texas</td>
-					<td>United States of America</td>
-				</tr>
-				<tr>
-					<td>1500</td>
-					<td>2011 Interiors Blvd</td>
-					<td>South San Francisco</td>
-					<td>California</td>
-					<td>United States of America</td>
-				</tr>
-				<tr>
-					<td>1700</td>
-					<td>2004 Charade Rd</td>
-					<td>Seattle</td>
-					<td>Washington</td>
-					<td>United States of America</td>
-				</tr>
-				<tr>
-					<td>1800</td>
-					<td>460 Bloor St.W.</td>
-					<td>Toronto</td>
-					<td>Ontario</td>
-					<td>Canada</td>
-				</tr>
-				<tr>
-					<td>2500</td>
-					<td>Magdalen Centre, The Oxford Science Park</td>
-					<td>Oxford</td>
-					<td>Oxford</td>
-					<td>United Kingdom</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 5 строк</div>
+			<iframe src="./lab05/task01.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров требуется отчет по сотрудникам на котором видно фамилию, код отдела и название отдела.</div>
-			<table class="check_values">
-				<tr>
-					<th>Фамилия</th>
-					<th>Код отдела</th>
-					<th>Название отдела</th>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>10</td>
-					<td>Administration</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>20</td>
-					<td>Marketing</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>20</td>
-					<td>Marketing</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>50</td>
-					<td>Shipping</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>50</td>
-					<td>Shipping</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>50</td>
-					<td>Shipping</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>50</td>
-					<td>Shipping</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>90</td>
-					<td>Executive</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>110</td>
-					<td>Accounting</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>110</td>
-					<td>Accounting</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 19 строк</div>
+			<iframe src="./lab05/task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужен отчет по сотрудникам в Торонто. Отобразите фамилию, код должности, код отдела и название отдела всех сотрудников, которые работают в &quot;Toronto&quot;.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>job_id</th>
-					<th>department_id</th>
-					<th>department_name</th>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>MK_MAN</td>
-					<td>20</td>
-					<td>Marketing</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>MK_REP</td>
-					<td>20</td>
-					<td>Marketing</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="./lab05/task03.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает фамилии и коды сотрудников и в той же строке фамилию и код его начальника. Подпишите колонки &quot;Сотрудник&quot;, &quot;Код сотрудника&quot;, &quot;Начальник&quot;, &quot;Код начальника&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>Сотрудник</th>
-					<th>Код сотрудника</th>
-					<th>Начальник</th>
-					<th>Код начальника</th>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>101</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>102</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>124</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>149</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>201</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>200</td>
-					<td>Kochhar</td>
-					<td>101</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>205</td>
-					<td>Kochhar</td>
-					<td>101</td>
-				</tr>
-				<tr>
-					<td>Hunold</td>
-					<td>103</td>
-					<td>De Haan</td>
-					<td>102</td>
-				</tr>
-				<tr>
-					<td>Ernst</td>
-					<td>104</td>
-					<td>Hunold</td>
-					<td>103</td>
-				</tr>
-				<tr>
-					<td>Lorentz</td>
-					<td>107</td>
-					<td>Hunold</td>
-					<td>103</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>141</td>
-					<td>Mourgos</td>
-					<td>124</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>142</td>
-					<td>Mourgos</td>
-					<td>124</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>143</td>
-					<td>Mourhos</td>
-					<td>124</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>144</td>
-					<td>Mourgos</td>
-					<td>124</td>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>174</td>
-					<td>Zlotkey</td>
-					<td>149</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>176</td>
-					<td>Zlotkey</td>
-					<td>149</td>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>178</td>
-					<td>Zlotkey</td>
-					<td>149</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>202</td>
-					<td>Hartstein</td>
-					<td>201</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>206</td>
-					<td>Higgins</td>
-					<td>205</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 19 строк</div>
+			<iframe src="./lab05/task04.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает фамилии и коды сотрудников и в той же строке фамилию и код его начальника. Подпишите колонки &quot;Сотрудник&quot;, &quot;Код сотрудника&quot;, &quot;Начальник&quot;, &quot;Код начальника&quot;. В результат должен попасть &quot;King&quot;. Отсортируйте по возрастанию кода сотрудника.</div>
-			<table class="check_values">
-				<tr>
-					<th>Сотрудник</th>
-					<th>Код сотрудника</th>
-					<th>Начальник</th>
-					<th>Код начальника</th>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>101</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>102</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>124</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>149</td>
-					<td>King</td>
-					<td>100</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 20 строк</div>
+			<iframe src="./lab05/task05.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет для отдела кадров, который показывает фамилию сотрудника, код отдела и фамилии всех сотрудников, которые работают в том же отделе. Подпишите колонки для отдела кадров.</div>
-			<table class="check_values">
-				<tr>
-					<th>Отдел</th>
-					<th>Сотрудник</th>
-					<th>Коллега</th>
-				</tr>
-				<tr>
-					<td>20</td>
-					<td>Fay</td>
-					<td>Hartstein</td>
-				</tr>
-				<tr>
-					<td>20</td>
-					<td>Hartstein</td>
-					<td>Fay</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Davies</td>
-					<td>Matos</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Davies</td>
-					<td>Mourgos</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Davies</td>
-					<td>Rajs</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Davies</td>
-					<td>Vargas</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Matos</td>
-					<td>Davies</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Matos</td>
-					<td>Mourgos</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Matos</td>
-					<td>Rajs</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Matos</td>
-					<td>Vargas</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Mourgos</td>
-					<td>Davies</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Mourgos</td>
-					<td>Matos</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Mourgos</td>
-					<td>Rajs</td>
-				</tr>
-				<tr>
-					<td>50</td>
-					<td>Mourgos</td>
-					<td>Vargas</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 42 строки</div>
+			<iframe src="./lab05/task06.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужен отчет по категориям сотрудников. По каждому сотруднику покажите фамилию, код должности, название отдела, зарплату и категорию.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>job_id</th>
-					<th>department_name</th>
-					<th>salary</th>
-					<th>gra</th>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>ST_CLERK</td>
-					<td>Shipping</td>
-					<td>2500</td>
-					<td>A</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>ST_CLERK</td>
-					<td>Shipping</td>
-					<td>2500</td>
-					<td>A</td>
-				</tr>
-				<tr>
-					<td>Lorentz</td>
-					<td>IT_PROG</td>
-					<td>IT</td>
-					<td>4200</td>
-					<td>B</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>ST_MAN</td>
-					<td>Shipping</td>
-					<td>5800</td>
-					<td>B</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>ST_CLERK</td>
-					<td>Shipping</td>
-					<td>3500</td>
-					<td>B</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>ST_CLERK</td>
-					<td>Shipping</td>
-					<td>3100</td>
-					<td>B</td>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>AD_ASST</td>
-					<td>Administration</td>
-					<td>4400</td>
-					<td>B</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 19 строк</div>
+			<iframe src="./lab05/task07.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task8"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужно узнать имена и дату найма сотрудников, которые были наняты позже, чем Davies.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>Lorentz</td>
-					<td>1999-02-07</td>
-				</tr>
-				<tr>
-					<td>Mourgos</td>
-					<td>1999-02-07</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>1998-07-09</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>1998-07-09</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>2000-01-29</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>1998-03-24</td>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>1999-05-24</td>
-				</tr>
-				<tr>
-					<td>Fay</td>
-					<td>1997-08-17</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 8 строк</div>
+			<iframe src="./lab05/task08.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task9"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужен отчет по сотрудникам, которые были наняты раньше, чем их начальники.</div>
-			<table class="check_values">
-				<tr>
-					<th>Сотрудник</th>
-					<th>Дата найма</th>
-					<th>Начальник</th>
-					<th>Дата найма</th>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>"1987-09-17"</td>
-					<td>Kochhar</td>
-					<td>"1989-09-21"</td>
-				</tr>
-				<tr>
-					<td>Hunold</td>
-					<td>"1990-01-03"</td>
-					<td>De Haan</td>
-					<td>"1993-01-13"</td>
-				</tr>
-				<tr>
-					<td>Rajs</td>
-					<td>"1995-10-17"</td>
-					<td>Mourgos</td>
-					<td>"1999-11-16"</td>
-				</tr>
-				<tr>
-					<td>Davies</td>
-					<td>"1997-01-29"</td>
-					<td>Mourgos</td>
-					<td>"1999-11-16"</td>
-				</tr>
-				<tr>
-					<td>Matos</td>
-					<td>"1998-07-09"</td>
-					<td>Mourgos</td>
-					<td>"1999-11-16"</td>
-				</tr>
-				<tr>
-					<td>Vargas</td>
-					<td>"1998-07-09"</td>
-					<td>Mourgos</td>
-					<td>"1999-11-16"</td>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>"1996-05-11"</td>
-					<td>Zlotkey</td>
-					<td>"2000-01-29"</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>"1998-03-24"</td>
-					<td>Zlotkey</td>
-					<td>"2000-01-29"</td>
-				</tr>
-				<tr>
-					<td>Grant</td>
-					<td>"1999-05-24"</td>
-					<td>Zlotkey</td>
-					<td>"2000-01-29"</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 9 строк</div>
+			<iframe src="./lab05/task09.html"></iframe>
 		</div>
 	</div>
 	</body>
