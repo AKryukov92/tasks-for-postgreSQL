@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -156,251 +159,62 @@ denominator {
 				<!-- <li><a href="#task">№ </a></li> -->
 			</ul>
 		</div>
-		<!-- <div class="quiz_block">
+		<div class="quiz_block">
 			<a name="quiz"><h3>Контрольные вопросы</h3></a>
 			<ol>
-				<li></li>
+				<li>Сколько строк может получиться при выполнении запроса?</li>
+				<li>Что можно сделать для того, чтобы запрос возвращал только одну строку?</li>
+				<li>Как правильно оформлять вложенный запрос, возвращающий несколько строк?</li>
+				<li>Как правильно оформить вложенный запрос, возвращающий только одну строку?</li>
+				<li>Какая ошибка возникнет при попытке использовать вложенный запрос, возвращающий несколько колонок?</li>
 			</ol>
-		</div> -->
+		</div>
 		
 	<div class="section">
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
 			<div class="task_desc">Отделу кадров нужен отчет с фамилией и датой найма сотрудников - коллег по отделу сотрудника с указанной фамилией.</div>
 			<div class="check_single">Для сотрудника Zlotkey</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>hire_date</th>
-				</tr>
-				<tr>
-					<td>Abel</td>
-					<td>1996-05-11</td>
-				</tr>
-				<tr>
-					<td>Taylor</td>
-					<td>1998-03-24</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 2 строки</div>
+			<iframe src="./lab06/task01.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет, который показывает код сотрудника, фамилию и зарплату для всех сотрудников, которые зарабатывают больше средней зарплаты. Отсортируйте в порядке возрастания зарплаты.</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>103</td>
-					<td>Hunold</td>
-					<td>9000</td>
-				</tr>
-				<tr>
-					<td>149</td>
-					<td>Zlotkey</td>
-					<td>10500</td>
-				</tr>
-				<tr>
-					<td>174</td>
-					<td>Abel</td>
-					<td>11000</td>
-				</tr>
-				<tr>
-					<td>205</td>
-					<td>Higgins</td>
-					<td>12000</td>
-				</tr>
-				<tr>
-					<td>201</td>
-					<td>Hartstein</td>
-					<td>13000</td>
-				</tr>
-				<tr>
-					<td>101</td>
-					<td>Kochhar</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>102</td>
-					<td>De Haan</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td>King</td>
-					<td>24000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 8 строк</div>
+			<iframe src="./lab06/task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает код и фамилию всех сотрудников, которые работают в одном отделе с сотрудником чья фамилия начинается с &quot;u&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-				</tr>
-				<tr>
-					<td>124</td>
-					<td>Mourgos</td>
-				</tr>
-				<tr>
-					<td>141</td>
-					<td>Rajs</td>
-				</tr>
-				<tr>
-					<td>142</td>
-					<td>Davies</td>
-				</tr>
-				<tr>
-					<td>143</td>
-					<td>Matos</td>
-				</tr>
-				<tr>
-					<td>144</td>
-					<td>Vargas</td>
-				</tr>
-				<tr>
-					<td>103</td>
-					<td>Hunold</td>
-				</tr>
-				<tr>
-					<td>104</td>
-					<td>Ernst</td>
-				</tr>
-				<tr>
-					<td>107</td>
-					<td>Lorentz</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 8 строк</div>
+			<iframe src="./lab06/task03.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Отделу кадров нужен отчет показывающий фамилию, код отдела и код должности всех сотрудников в отделах, находящихся в локации с кодом 1700.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>department_id</th>
-					<th>job_id</th>
-				</tr>
-				<tr>
-					<td>Whalen</td>
-					<td>10</td>
-					<td>AD_ASST</td>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>90</td>
-					<td>AD_PRES</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>90</td>
-					<td>AD_VP</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>90</td>
-					<td>AD_VP</td>
-				</tr>
-				<tr>
-					<td>Higgins</td>
-					<td>110</td>
-					<td>AC_MGR</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>110</td>
-					<td>AC_ACCOUNT</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 6 строк</div>
+			<div class="task_desc">Отделу кадров нужен отчет показывающий фамилию, код отдела и код должности всех сотрудников в отделах, находящихся по адресу с кодом 1700.</div>
+			<iframe src="./lab06/task04.html"></iframe>
+			<div class="task_desc">Измените запрос так, чтобы пользователь указывал код адреса</div>
+			<div class="check_single">Для кода адреса &quot;2500&quot;</div>
+			<iframe src="./lab06/task04a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет для отдела кадров, который отображает фамилию и зарплату каждого сотрудника в подчинении у King.</div>
-			<table class="check_values">
-				<tr>
-					<th>last_name</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>De Haan</td>
-					<td>17000</td>
-				</tr>
-				<tr>
-					<td>Mourhos</td>
-					<td>5800</td>
-				</tr>
-				<tr>
-					<td>Zlotkey</td>
-					<td>10500</td>
-				</tr>
-				<tr>
-					<td>Hartstein</td>
-					<td>13000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 5 строк</div>
+			<iframe src="./lab06/task05.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте отчет для отдела кадров, который показывает код отдела, фамилию и код должности для каждого сотрудника в отделе &quot;Executive&quot;.</div>
-			<table class="check_values">
-				<tr>
-					<th>department_id</th>
-					<th>last_name</th>
-					<th>job_id</th>
-				</tr>
-				<tr>
-					<td>90</td>
-					<td>King</td>
-					<td>AD_PRES</td>
-				</tr>
-				<tr>
-					<td>90</td>
-					<td>Kochhar</td>
-					<td>AD_VP</td>
-				</tr>
-				<tr>
-					<td>90</td>
-					<td>De Haan</td>
-					<td>AD_VP</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 3 строки</div>
+			<iframe src="./lab06/task06.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос, который отображает код и фамилию всех сотрудников, которые получают зарплату выше средней и работают в одном отделе с сотрудником чья фамилия начинается с &quot;u&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>last_name</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>103</td>
-					<td>Hunold</td>
-					<td>9000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 1 строка</div>
+			<iframe src="./lab06/task07.html"></iframe>
 		</div>
 	</div>
 	</body>
