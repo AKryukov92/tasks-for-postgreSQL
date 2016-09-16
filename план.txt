@@ -33,6 +33,7 @@ order by псевдоним
 1-4. select
 group by
 aggregate functions (sum, count, max, min, avg)
+having
 
 1-5. select
 join (inner, left, right)
