@@ -1,0 +1,1 @@
+COPY depts FROM 'C:/temp/depts.csv' (DELIMITER',');

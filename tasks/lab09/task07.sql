@@ -1,0 +1,1 @@
+COPY employees TO 'C:/temp/employees.csv' (DELIMITER',');

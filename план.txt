@@ -70,6 +70,7 @@ structured no data
 create by select
 insert by select
 drop table
+load data from file
 
 1-10 create views
 updateable
@@ -84,6 +85,7 @@ sequence info
 2-1 create user
 grant insert, select, update, delete
 revoke
+alter set owner
 
 2-2 physical
 find file
@@ -95,7 +97,6 @@ alter table add conditional constraint
 !!!!!!!!!!alter table add column
 
 2-3 
-load data from file
 ??????????pivoting insert
 ??????????row history
 
