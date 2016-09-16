@@ -163,7 +163,7 @@ denominator {
 			<ol>
 				<li>Что такое представление (вью)?</li>
 				<li>Можно ли выполнять запросы на добавление, удаление и изменение данных в представлении (вью)?</li>
-				<li>В каком случае представление (вью) нельзя модифицировать?</li>
+				<li>Какие требования нужно выполнить, чтобы представление (вью) можно было обновлять?</li>
 			</ol>
 		</div>
 		
@@ -177,122 +177,24 @@ denominator {
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Убедитесь, что представление (вью) работает. Выберите данные из представления (вью) employees_vu.</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>employee</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td>King</td>
-					<td>90</td>
-				</tr>
-				<tr>
-					<td>101</td>
-					<td>Kochhar</td>
-					<td>90</td>
-				</tr>
-				<tr>
-					<td>102</td>
-					<td>De Haan</td>
-					<td>90</td>
-				</tr>
-				<tr>
-					<td>103</td>
-					<td>Hunold</td>
-					<td>60</td>
-				</tr>
-				<tr>
-					<td>104</td>
-					<td>Ernst</td>
-					<td>60</td>
-				</tr>
-				<tr>
-					<td>107</td>
-					<td>Lorentz</td>
-					<td>60</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>206</td>
-					<td>Gietz</td>
-					<td>110</td>
-				</tr>
-			</table>
+			<iframe src="./lab10/task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
 			<div class="task_desc">Напишите запрос для отдела кадров используя представление (вью) employees_vu. Выберите сотрудника и код отдела</div>
-			<table class="check_values">
-				<tr>
-					<th>employee</th>
-					<th>department_id</th>
-				</tr>
-				<tr>
-					<td>King</td>
-					<td>90</td>
-				</tr>
-				<tr>
-					<td>Kochhar</td>
-					<td>90</td>
-				</tr>
-				<tr>
-					<td>...</td>
-					<td>...</td>
-				</tr>
-				<tr>
-					<td>Gietz</td>
-					<td>110</td>
-				</tr>
-			</table>
+			<iframe src="./lab10/task03.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Отделу № 50 нужен доступ к информации по сотрудникам. Создайте представление (вью) dept50, которое содержит код, фамилию сотрудника и его код отдела. Колонки должны быть названы empno, employee, deptno. Нужно запретить редактирование данных через представление (вью).</div>
+			<div class="task_desc">Отделу № 50 нужен доступ к информации по сотрудникам. Создайте представление (вью) dept50, которое содержит код, фамилию и код отдела всех сотрудников из отдела №50. Колонки должны быть названы &quot;КодСотр&quot;, &quot;Сотр&quot;, &quot;Отдел&quot;. Нужно запретить редактирование данных через представление (вью).</div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
 			<div class="task_desc">Отобразите содержимое представления (вью) dept50.</div>
-			<table class="check_values">
-				<tr>
-					<th>empno</th>
-					<th>employee</th>
-					<th>deptno</th>
-				</tr>
-				<tr>
-					<td>124</td>
-					<td>Mourgos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>141</td>
-					<td>Rajs</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>142</td>
-					<td>Davies</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>143</td>
-					<td>Matos</td>
-					<td>50</td>
-				</tr>
-				<tr>
-					<td>144</td>
-					<td>Vargas</td>
-					<td>50</td>
-				</tr>
-			</table>
+			<iframe src="./lab10/task05.html"></iframe>
 		</div>
 		
 		<div class="task_block">
