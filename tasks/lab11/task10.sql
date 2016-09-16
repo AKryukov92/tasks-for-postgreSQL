@@ -1,0 +1,1 @@
+REVOKE SELECT ON departments FROM userb;

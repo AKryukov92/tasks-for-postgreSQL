@@ -1,0 +1,1 @@
+GRANT INSERT ON departments TO usera;
