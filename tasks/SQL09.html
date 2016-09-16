@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -131,7 +134,7 @@ denominator {
 				<li><a href="SQL07.html">SQL07</a></li>
 				<li><a href="SQL08.html">SQL08</a></li>
 				<li>SQL09</li>
-				<li><a href="SQL09.html">SQL10</a></li>
+				<li><a href="SQL10.html">SQL10</a></li>
 				<li><a href="SQL11.html">SQL11</a></li>
 				<li><a href="SQL12.html">SQL12</a></li>
 				<li><a href="SQL13.html">SQL13</a></li>
@@ -157,7 +160,8 @@ denominator {
 		<div class="quiz_block">
 			<a name="quiz"><h3>Контрольные вопросы</h3></a>
 			<ol>
-				<li>Как оформить запрос создания таблицы?</li>
+				<li>Как оформить запрос на создание таблицы?</li>
+				<li>Как создать копию таблицы?</li>
 				<li>Как вставить в таблицу А данные из таблицы Б?</li>
 				<li>Как удалить таблицу?</li>
 			</ol>
@@ -196,25 +200,21 @@ denominator {
 				</tr>
 				<tr>
 					<th>тип данных</th>
-					<td>NUMERIC</td>
+					<td>INTEGER</td>
 					<td>CHARACTER VARYING</td>
-				</tr>
-				<tr>
-					<th>длина</th>
-					<td>7</td>
-					<td>25</td>
 				</tr>
 			</table>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
-			<div class="task_desc">Заполните таблицу &quot;dept&quot; данными из таблицы &quot;departments&quot;. Колонки новой таблицы должны быть заполнены данными из соответствующих колонок старой таблицы.</div>
+			<div class="task_desc">Заполните таблицу &quot;dept&quot; данными из таблицы &quot;departments&quot;. Колонки новой таблицы должны быть заполнены данными из соответствующих колонок старой таблицы. Проверьте содержимое таблицы &quot;dept&quot;</div>
+			<iframe src="./lab09/task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
-			<div class="task_desc">Создайте таблицу &quot;emp&quot; со следующей структурой. Убедитесь, что таблица создана успешно.</div>
+			<div class="task_desc">Напишите скрипт для создания таблицы &quot;emp&quot; со следующей структурой. Запустите скрипт и убедитесь, что таблица создана успешно.</div>
 			<table class="check_values">
 				<tr>
 					<th>Название колонки</th>
@@ -241,8 +241,8 @@ denominator {
 					<th>таблица для внешнего ключа</th>
 					<td></td>
 					<td></td>
-					<td>dept</td>
 					<td></td>
+					<td>dept</td>
 				</tr>
 				<tr>
 					<th>колонка для внешнего ключа</th>
@@ -253,24 +253,18 @@ denominator {
 				</tr>
 				<tr>
 					<th>тип данных</th>
-					<td>NUMERIC</td>
+					<td>INTEGER</td>
 					<td>CHARACTER VARYING</td>
 					<td>CHARACTER VARYING</td>
-					<td>NUMERIC</td>
-				</tr>
-				<tr>
-					<th>длина</th>
-					<td>7</td>
-					<td>25</td>
-					<td>25</td>
-					<td>7</td>
+					<td>INTEGER</td>
 				</tr>
 			</table>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Создайте таблицу &quot;employees2&quot; со структурой основанной на таблице &quot;employees&quot;. Там должны быть колонки &quot;employee_id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;department_id&quot;. Назовите колонки в новой таблице &quot;id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;dept_id&quot; соответственно.</div>
+			<div class="task_desc">Создайте таблицу &quot;employees2&quot; со структурой основанной на таблице &quot;employees&quot;. Используйте колонки &quot;employee_id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;department_id&quot;. Назовите колонки в новой таблице &quot;id&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;salary&quot;, &quot;dept_id&quot; соответственно. Проверьте содержимое таблицы &quot;employees2&quot;</div>
+			<iframe src="./lab09/task04a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
