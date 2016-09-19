@@ -58,6 +58,7 @@ parametrized
 update where id
 update complex where
 delete by id
+??????????pivoting insert
 
 begin transaction
 savepoint
@@ -78,17 +79,17 @@ updateable
 insert to updateable
 pseudonims
 
-1-11 select system tables
+1-11 (-) select system tables
 alter table comment
 sql of views
 sequence info
 
-2-1 create user
+2-1 (11) create user
 grant insert, select, update, delete
 revoke
 alter set owner
 
-2-2 alters
+2-2 (12) alters
 !!!!!!!!!!insert violate primary key
 !!!!!!!!!!insert violate foreign key
 !!!!!!!!!!alter table add not null property
@@ -97,16 +98,16 @@ alter table add foreign key
 alter table add column
 alter table add conditional constraint
 
-2-3 
-??????????pivoting insert
+2-3 (-)
 ??????????row history
 
-2-4
+2-4 (-)
+!!!!!!!!!!postgresql 9.5
 rollup
 cube
 grouping sets
 
-2-5
+2-5 (13)
 alter session date format
 locale information
 timestamp type

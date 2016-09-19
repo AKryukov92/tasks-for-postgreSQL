@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -163,10 +166,11 @@ denominator {
 		<div class="quiz_block">
 			<a name="quiz"><h3>Контрольные вопросы</h3></a>
 			<ol>
-				<li>Как ?</li>
-				<li>Как узнать расположение файлов данных?</li>
-				<li>Можно ли восстановить удаленную таблицу средствами postgresql?</li>
-				<li>Как оформить запрос для создания ограничения в таблице?</li>
+				<li>Что такое сессия?</li>
+				<li>На что влияет формат даты в сессии?</li>
+				<li>На что влияет таймзона сессии?</li>
+				<li>В каком формате база данных хранит даты?</li>
+				<li></li>
 			</ol>
 		</div>
 		
@@ -174,128 +178,62 @@ denominator {
 		<h2>Добавление данных</h2>
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
-			<div class="task_desc">Запустите скрипты &quot;prepare_sal_history.sql&quot;, &quot;prepare_mgr_history.sql&quot;, &quot;prepare_special_sal.sql&quot;. Ознакомьтесь со структурой таблиц &quot;sal_history&quot;, &quot;mgr_history&quot;, &quot;special_sal&quot;.</div>
+			<div class="task_desc">Измените порядок дней, месяцев и лет в рамках сессии. Сначала должен быть день, затем месяц и в конце год. Выведите текущую дату.</div>
+			<iframe src="./lab13/task01a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
-			<div class="task_desc">Напишите запрос выполняющий шаги:</div>
-			<div class="check_single">Извлеките код сотрудника, дату найма, зарплату и код начальника у сотрудников, чей код меньше 125.</div>
-			<div class="check_single">Если зарплата больше 20000, вставьте данные о сотруднике в таблицу &quot;special_sal&quot;.</div>
-			<div class="check_single">Вставьте код сотрудника, дату найма и зарплату в таблицу &quot;sal_history&quot;.</div>
-			<div class="check_single">Вставьте код сотрудника, код начальника и зарплату в таблицу &quot;mgr_history&quot;.</div>
+			<div class="task_desc">Выведите разницу от Гринвича для таймзон &quot;US/Pacific&quot;, &quot;Asia/Omsk&quot;, &quot;Europe/Moscow&quot;.</div>
+			<iframe src="./lab13/task02.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task3"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите информацию из таблицы &quot;special_sal&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>salary</th>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td>24000</td>
-				</tr>
-			</table>
-			<div class="check_single">Всего 1 строка</div>
+			<div class="task_desc">Измените таймзону сессии на &quot;US/Pacific&quot; и выведите текущую дату и текущую метку времени.</div>
+			<iframe src="./lab13/task03a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите информацию из таблицы &quot;sal_history&quot;.</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>hire_date</th>
-					<th>salary</th>
-				</tr>
-				<tr><td>101</td><td>1989-09-21</td><td>17000</td></tr>
-				<tr><td>102</td><td>1993-01-13</td><td>17000</td></tr>
-				<tr><td>103</td><td>1990-01-03</td><td>9000</td></tr>
-				<tr><td>104</td><td>1991-03-21</td><td>6000</td></tr>
-				<tr><td>107</td><td>1991-05-21</td><td>4200</td></tr>
-				<tr><td>124</td><td>1999-11-16</td><td>5800</td></tr>
-			</table>
-			<div class="check_single">Всего 6 строк</div>
+			<div class="task_desc">Измените таймзону сессии на &quot;Europe/Moscow&quot; и выведите текущую дату и текущую метку времени.</div>
+			<iframe src="./lab13/task04a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task5"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите информацию из таблицы &quot;mgr_history&quot;.</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>manager_id</th>
-					<th>salary</th>
-				</tr>
-				<tr><td>101</td><td>100</td><td>17000</td></tr>
-				<tr><td>102</td><td>100</td><td>17000</td></tr>
-				<tr><td>103</td><td>102</td><td>9000</td></tr>
-				<tr><td>104</td><td>103</td><td>6000</td></tr>
-				<tr><td>107</td><td>103</td><td>4200</td></tr>
-				<tr><td>124</td><td>100</td><td>5800</td></tr>
-			</table>
-			<div class="check_single">Всего 6 строк</div>
+			<div class="task_desc">Напишите запрос для извлечения года найма по всем сотрудникам, которые работают в отделе 80.</div>
+			<iframe src="./lab13/task05.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
-			<div class="task_desc">Запустите скрипт &quot;prepare_sales_source_data.sql&quot; чтобы подготовить таблицу &quot;sales_source_data&quot; и скрипт &quot;fill_sales_source_data.sql&quot; для того, чтобы заполнить ее данными.</div>
+			<div class="task_desc"></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите информацию из таблицы &quot;sales_source_data&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>week_id</th>
-					<th>sales_mon</th>
-					<th>sales_tue</th>
-					<th>sales_wed</th>
-					<th>sales_thur</th>
-					<th>sales_fri</th>
-				</tr>
-				<tr><td>178</td><td>6</td><td>1750</td><td>2200</td><td>1500</td><td>1500</td><td>3000</td></tr>
-			</table>
+			<div class="task_desc"></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task8"><h3>Задача</h3></a>
-			<div class="task_desc">Запустите скрипт &quot;prepare_sales_info.sql&quot;</div>
+			<div class="task_desc"></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task9"><h3>Задача</h3></a>
-			<div class="task_desc">Напишите запрос выполняющий шаги</div>
-			<div class="check_single">Получите информацию о коде сотрудника, неделе и продажах с понедельника по пятницу из таблицы &quot;sales_source_data&quot;</div>
-			<div class="check_single">Постройте запрос для трансформации каждой строки таблицы &quot;sales_source_data&quot; во множество строк таблицы &quot;sales_info&quot;</div>
+			<div class="task_desc"></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task10"><h3>Задача</h3></a>
-			<div class="task_desc">Отобразите информацию из таблицы &quot;sales_source_data&quot;</div>
-			<table class="check_values">
-				<tr>
-					<th>employee_id</th>
-					<th>week</th>
-					<th>sales</th>
-				</tr>
-				<tr><td>178</td><td>6</td><td>1750</td></tr>
-				<tr><td>178</td><td>6</td><td>2200</td></tr>
-				<tr><td>178</td><td>6</td><td>1500</td></tr>
-				<tr><td>178</td><td>6</td><td>1500</td></tr>
-				<tr><td>178</td><td>6</td><td>3000</td></tr>
-			</table>
+			<div class="task_desc"></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task11"><h3>Задача</h3></a>
-			<div class="task_desc">Сейчас данные о прошлом сотрудников сохранено в файле &quot;emp.data&quot;. Вам нужно сохранить имена и адреса почты как прошлых, так и нынешних сотрудников в таблице &quot;emp_hist&quot;.</div>
-			<div class="check_single">Создайте таблицу &quot;emp_hist&quot; с помощью скрипта &quot;prepare_emp_hist.sql&quot;</div>
-			<div class="check_single">Загрузите данные из файла &quot;emp.data&quot; в таблицу &quot;emp_hist&quot;</div>
+			<div class="task_desc"></div>
 		</div>
 	</div>
 	</body>
