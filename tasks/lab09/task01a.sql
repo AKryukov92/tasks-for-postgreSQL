@@ -1,0 +1,1 @@
+SELECT pg_relation_filepath('depts');

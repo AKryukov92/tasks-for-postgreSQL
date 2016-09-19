@@ -156,6 +156,7 @@ denominator {
 				<li><a href="#task5">№ 5</a></li>
 				<li><a href="#task6">№ 6</a></li>
 				<li><a href="#task7">№ 7</a></li>
+				<li><a href="#task8">№ 8</a></li>
 				<!-- <li><a href="#task">№ </a></li> -->
 			</ul>
 		</div>
@@ -168,6 +169,8 @@ denominator {
 				<li>Как удалить таблицу?</li>
 				<li>Как оформить загрузку данных из файла?</li>
 				<li>Как оформить выгрузку данных в файл?</li>
+				<li>Как узнать где хранятся данные из таблицы?</li>
+				<li>Можно ли восстановить удаленную таблицу средствами postgresql?</li>
 			</ol>
 		</div>
 		
@@ -208,12 +211,17 @@ denominator {
 					<td>CHARACTER VARYING</td>
 				</tr>
 			</table>
+			<div class="task_desc">Найдите файл, соответствующий таблице &quot;depts&quot;, в файловой системе с помощью запроса. Запишите размер файла в байтах.
+			</div>
+			<div class="check_single">SELECT pg_relation_filepath('depts');</div>
+			<iframe src="./lab09/task01a.html"></iframe>
 		</div>
 		
 		<div class="task_block">
 			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Заполните таблицу &quot;depts&quot; данными из таблицы &quot;departments&quot;. Колонки новой таблицы должны быть заполнены данными из соответствующих колонок старой таблицы. Проверьте содержимое таблицы &quot;depts&quot;</div>
 			<iframe src="./lab09/task02a.html"></iframe>
+			<div class="task_desc">Сравните размер файла, соответствующего таблице &quot;depts&quot;, до и после добавления данных.</div>
 		</div>
 		
 		<div class="task_block">
@@ -280,10 +288,16 @@ denominator {
 			<a name="task6"><h3>Задача</h3></a>
 			<div class="task_desc">Загрузите данные из файла <a href="./lab09/depts.csv" target="_blank">depts.csv</a> в таблицу &quot;depts&quot;. Проверьте содержимое таблицы &quot;depts&quot;.</div>
 			<iframe src="./lab09/task06a.html"></iframe>
+			<div class="task_desc">Сравните размер файла, соответствующего таблице &quot;depts&quot;, до и после добавления данных из файла. Сравните разницу размеров файла таблицы &quot;depts&quot; и размер файла <a href="./lab09/depts.csv" target="_blank">depts.csv</a></div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
+			<div class="task_desc">Удалите таблицу &quot;depts&quot;. Проверьте, остался ли файл на прежнем месте.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task8"><h3>Задача</h3></a>
 			<div class="task_desc">Выгрузите информацию о сотрудниках в файл &quot;C:/temp/employees.csv&quot;.</div>
 		</div>
 	</div>

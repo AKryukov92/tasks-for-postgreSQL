@@ -23,6 +23,9 @@ sqrt:before {
 	counter-increment:section;
 	content: " " counter(section);
 }
+iframe {
+	width:100%;
+}
 .check_values {
 	border-collapse:collapse;
 	width:100%;
@@ -77,8 +80,16 @@ sqrt:before {
 	width:75%;
 	overflow:auto;
 }
-.check_values .preformatted, .preformatted {
+.preformatted {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select:none;
+	
 	font-family:monospace;
+	page-break-inside:avoid;
 	white-space:pre;
 	text-align:left;
 	padding:10px;
@@ -146,6 +157,9 @@ denominator {
 			<ul>
 				<li><a href="#heading">^</a></li>
 				<li><a href="#quiz">?</a></li>
+				<li><a href="#writing1">П 1</a></li>
+				<li><a href="#writing2">П 2</a></li>
+				<li><a href="#writing3">П 3</a></li>
 				<li><a href="#task1">№ 1</a></li>
 				<li><a href="#task2">№ 2</a></li>
 				<li><a href="#task3">№ 3</a></li>
@@ -153,17 +167,13 @@ denominator {
 				<li><a href="#task5">№ 5</a></li>
 				<li><a href="#task6">№ 6</a></li>
 				<li><a href="#task7">№ 7</a></li>
-				<li><a href="#task8">№ 8</a></li>
-				<li><a href="#task9">№ 9</a></li>
 				<!-- <li><a href="#task">№ </a></li> -->
 			</ul>
 		</div>
 		<div class="quiz_block">
+		<h2>Добавление данных</h2>
 			<a name="quiz"><h3>Контрольные вопросы</h3></a>
 			<ol>
-				<li>Как удалить таблицу?</li>
-				<li>Как узнать расположение файлов данных?</li>
-				<li>Можно ли восстановить удаленную таблицу средствами postgresql?</li>
 				<li>Как оформить запрос для создания ограничения в таблице?</li>
 				<li>Для чего нужен первичный ключ?</li>
 				<li>Как добавить таблице первичный ключ?</li>
@@ -173,28 +183,9 @@ denominator {
 		</div>
 		
 	<div class="section">
-		<h2>Добавление данных</h2>
 		<div class="task_block">
 			<a name="task1"><h3>Задача</h3></a>
-			<div class="task_desc">Найдите файл, соответствующий таблице &quot;employees&quot; с помощью запроса
-			<div class="check_single">SELECT pg_relation_filepath('employees');</div>
-			Найдите файл в файловой системе.
-			</div>
-		</div>
-		
-		<div class="task_block">
-			<a name="task2"><h3>Задача</h3></a>
-			<div class="task_desc">Создайте копию таблицы &quot;employees&quot;. Назовите ее &quot;emp2&quot;. Сравните физический размер таблиц &quot;employees&quot; и &quot;emp2&quot;.</div>
-		</div>
-		
-		<div class="task_block">
-			<a name="task3"><h3>Задача</h3></a>
-			<div class="task_desc">Удалите таблицу &quot;emp2&quot;. Проверьте размер файла, в котором она хранилась.</div>
-		</div>
-		
-		<div class="task_block">
-			<a name="task4"><h3>Задача</h3></a>
-			<div class="task_desc">Создайте таблицу &quot;dept2&quot; со структурой:</div>
+			<div class="task_desc">Создайте таблицу &quot;depts2&quot; со структурой:</div>
 			<table class="check_values">
 				<tr>
 					<th>Название колонки</th>
@@ -230,7 +221,7 @@ denominator {
 		</div>
 		
 		<div class="task_block">
-			<a name="task5"><h3>Задача</h3></a>
+			<a name="task2"><h3>Задача</h3></a>
 			<div class="task_desc">Создайте таблицу &quot;emp2&quot; со структурой:</div>
 			<table class="check_values">
 				<tr>
@@ -279,23 +270,299 @@ denominator {
 		</div>
 		
 		<div class="task_block">
-			<a name="task6"><h3>Задача</h3></a>
-			<div class="task_desc">Заполните таблицу &quot;dept2&quot; данными из таблицы &quot;departments&quot;.</div>
+			<a name="task3"><h3>Задача</h3></a>
+			<div class="task_desc">Заполните таблицу &quot;depts2&quot; данными из таблицы &quot;departments&quot;.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task4"><h3>Задача</h3></a>
+			<div class="task_desc">Добавьте ограничение PRIMARY KEY таблице &quot;depts2&quot; по колонке &quot;id&quot;. Назовите ограничение &quot;my_dept_id_pk&quot;. Убедитесь, что ограничение создано.</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="task5"><h3>Задача</h3></a>
+			<div class="task_desc">Добавьте ограничение FOREIGN KEY таблице &quot;emp2&quot; так, чтобы каждый сотрудник относился к существующему отделу. Назовите ограничение &quot;my_emp_dept_id_fk&quot;. Убедитесь, что ограничение создано.</div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task6"><h3>Задача</h3></a>
-			<div class="task_desc">Добавьте ограничение PRIMARY KEY таблице &quot;dept2&quot; по колонке &quot;id&quot;. Назовите ограничение &quot;my_dept_id_pk&quot;. Убедитесь, что ограничение создано.</div>
+			<div class="task_desc">Добавьте в таблицу &quot;emp2&quot; колонку &quot;commission&quot; с типом NUMERIC. </div>
 		</div>
 		
 		<div class="task_block">
 			<a name="task7"><h3>Задача</h3></a>
-			<div class="task_desc">Добавьте ограничение FOREIGN KEY таблицу &quot;emp2&quot; так, чтобы каждый сотрудник относился к существующему отделу. Назовите ограничение &quot;my_emp_dept_id_fk&quot;. Убедитесь, что ограничение создано.</div>
+			<div class="task_desc">Добавьте ограничение на колонку &quot;commission&quot; в таблице &quot;emp2&quot; так, чтобы значения в ней были больше нуля.</div>
+		</div>
+	</div>
+	
+	
+	<div class="section">
+		<div class="task_block">
+			<a name="writing1"><h3>Письменное задание</h3></a>
+			<div class="task_desc">Предскажите результат выполнения скриптов. Выполните их и оцените правильность предсказания.</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+INSERT INTO tmp VALUES (1, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL PRIMARY KEY,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+INSERT INTO tmp VALUES (1, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL PRIMARY KEY,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+INSERT INTO tmp VALUES (3, 'tmp3');
+INSERT INTO tmp(name) VALUES ('tmp4');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL PRIMARY KEY,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+INSERT INTO tmp VALUES (4, 'tmp4');
+INSERT INTO tmp(name) VALUES ('tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL PRIMARY KEY,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+INSERT INTO tmp VALUES (4, 'tmp4');
+INSERT INTO tmp(name) VALUES ('tmp3');
+INSERT INTO tmp(name) VALUES ('tmp5');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id SERIAL PRIMARY KEY,name VARCHAR);
+INSERT INTO tmp(name) VALUES ('tmp1');
+INSERT INTO tmp(name) VALUES ('tmp2');
+DELETE FROM tmp WHERE id = 1;
+INSERT INTO tmp(name) VALUES ('tmp3');
+SELECT * FROM tmp;</div>
 		</div>
 		
 		<div class="task_block">
-			<a name="task8"><h3>Задача</h3></a>
-			<div class="task_desc">Добавьте в таблицу &quot;emp2&quot; колонку &quot;commission&quot; с типом NUMERIC. Добавьте ограничение на колонку &quot;commission&quot; так, чтобы значения в ней были больше нуля.</div>
+			<a name="writing2"><h3>Письменное задание</h3></a>
+			<div class="task_desc">Предскажите результат выполнения скриптов. Выполните их и оцените правильность предсказания.</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (2, 'tmp2.2');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER PRIMARY KEY, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (2, 'tmp2.2');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+ALTER TABLE tmp ADD CONSTRAINT "tmp_id" PRIMARY KEY (id);
+INSERT INTO tmp VALUES (3, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+ALTER TABLE tmp ADD CONSTRAINT "tmp_id" PRIMARY KEY (id);
+INSERT INTO tmp VALUES (2, 'tmp2.2');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (3, 'tmp3');
+ALTER TABLE tmp ADD CONSTRAINT "tmp_id" PRIMARY KEY (id);
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp VALUES (1, 'tmp1');
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (2, 'tmp2.2');
+ALTER TABLE tmp ADD CONSTRAINT "tmp_id" PRIMARY KEY (id);
+SELECT * FROM tmp;</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="writing3"><h3>Письменное задание</h3></a>
+			<div class="task_desc">Предскажите результат выполнения скриптов. Выполните их и оцените правильность предсказания.</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 1);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+SELECT * FROM rtable JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 1);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+SELECT * FROM rtable JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+INSERT INTO rtable VALUES (4, 'right4', 3);
+SELECT * FROM rtable JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+INSERT INTO rtable VALUES (4, 'right4', 3);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid);
+SELECT * FROM rtable JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+DELETE FROM ltable WHERE lid = 2;
+SELECT * FROM rtable JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid) ON DELETE SET NULL;
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+DELETE FROM ltable WHERE lid = 2;
+SELECT * FROM rtable LEFT JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid);
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+UPDATE ltable SET lid = 3 WHERE lid = 2;
+SELECT * FROM rtable LEFT JOIN ltable ON ltable.lid = rtable.lid;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS ltable, rtable;
+CREATE TABLE ltable (lid INTEGER PRIMARY KEY, lname TEXT);
+CREATE TABLE rtable (rid INTEGER PRIMARY KEY, rname TEXT, lid INTEGER);
+ALTER TABLE rtable ADD CONSTRAINT "rtable id fkey" FOREIGN KEY (lid) REFERENCES ltable(lid) ON UPDATE CASCADE;
+INSERT INTO ltable VALUES (1, 'left1');
+INSERT INTO ltable VALUES (2, 'left2');
+INSERT INTO rtable VALUES (1, 'right1', 1);
+INSERT INTO rtable VALUES (2, 'right2', 2);
+INSERT INTO rtable VALUES (3, 'right3', 2);
+UPDATE ltable SET lid = 3 WHERE lid = 2;
+SELECT * FROM rtable LEFT JOIN ltable ON ltable.lid = rtable.lid;</div>
+		</div>
+		
+		<div class="task_block">
+			<a name="writing4"><h3>Письменное задание</h3></a>
+			<div class="task_desc">Предскажите результат выполнения скриптов. Выполните их и оцените правильность предсказания.</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp (id) VALUES (1);
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (3, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR NOT NULL);
+INSERT INTO tmp (id) VALUES (1);
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (3, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted">DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (id INTEGER, name VARCHAR);
+INSERT INTO tmp (id) VALUES (1);
+ALTER TABLE tmp ALTER COLUMN name SET NOT NULL;
+INSERT INTO tmp VALUES (2, 'tmp2');
+INSERT INTO tmp VALUES (3, 'tmp3');
+SELECT * FROM tmp;</div>
+			<div class="check_single preformatted"></div>
+		</div>
+			
+		<div class="task_block">
+			<a name="writing5"><h3>Письменное задание</h3></a>
+			<div class="task_desc">Заполните таблицу. Отразите преимущества и недостатки использования типов данных в качестве ключа.</div>
+			<table class="check_values">
+				<tr>
+					<th></th>
+					<th>Преимущества</th>
+					<th>Недостатки</th>
+				</tr>
+				<tr>
+					<td>INTEGER</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>SERIAL</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>CHARACTER VARYING</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>CHARACTER</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>UUID</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>TIMESTAMP</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>TIMESTAMP WITH TIMEZONE</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>DATE</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>TIME WITH TIMEZONE</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+				<tr>
+					<td>Составной ключ</td>
+					<td><br/><br/><br/><br/><br/></td>
+					<td><br/><br/><br/><br/><br/></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	</body>

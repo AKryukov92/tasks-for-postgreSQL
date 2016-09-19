@@ -1,0 +1,1 @@
+ALTER TABLE emp2 ADD CONSTRAINT "emp2_id_fkey" FOREIGN KEY (dept_id) REFERENCES depts2(id);

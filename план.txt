@@ -66,6 +66,7 @@ rollback to savepoint
 commit
 
 1-9. create table
+physical location, size, growth
 structured no data
 create by select
 insert by select
@@ -87,14 +88,14 @@ grant insert, select, update, delete
 revoke
 alter set owner
 
-2-2 physical
-find file
-
+2-2 alters
+!!!!!!!!!!insert violate primary key
+!!!!!!!!!!insert violate foreign key
+!!!!!!!!!!alter table add not null property
 alter table add primary key
 alter table add foreign key
+alter table add column
 alter table add conditional constraint
-!!!!!!!!!!alter table add not null constraint
-!!!!!!!!!!alter table add column
 
 2-3 
 ??????????pivoting insert

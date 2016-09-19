@@ -1,0 +1,1 @@
+ALTER TABLE emp2 ADD COLUMN commission NUMERIC;

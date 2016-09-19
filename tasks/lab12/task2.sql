@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS emp2;
+CREATE TABLE emp2 (
+  id INTEGER,
+  last_name CHARACTER VARYING,
+  first_name CHARACTER VARYING,
+  dept_id INTEGER
+);

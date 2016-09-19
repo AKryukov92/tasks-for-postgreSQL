@@ -1,0 +1,1 @@
+ALTER TABLE depts2 ADD CONSTRAINT "depts2_id" PRIMARY KEY (id);

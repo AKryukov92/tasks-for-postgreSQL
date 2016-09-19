@@ -1,0 +1,1 @@
+ALTER TABLE emp2 ADD CONSTRAINT "comm" CHECK (commission > 0.0);
