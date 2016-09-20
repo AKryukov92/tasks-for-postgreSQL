@@ -23,10 +23,8 @@ cmd - set named params
 	psql -d human_resources -U postgres -f simple_select.sql -t -A -F "," -v tbl=departments > result.csv
 
 1-3. select
-date functions
 where cell function
 where in
-date diff
 lpad
 order by псевдоним
 
@@ -108,6 +106,8 @@ cube
 grouping sets
 
 2-5 (13)
+date functions
+date diff
 alter session date format
 locale information
 timestamp type

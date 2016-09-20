@@ -1,6 +1,3 @@
 SELECT
- last_name as "Фамилия"
- , char_length(last_name) as "Длина фамилии"
-FROM employees
-WHERE substring(last_name from 1 for 1) = 'H'
-ORDER BY last_name;
+ format('%s зарабатывает %s ежемесячно, но мечает о %s', last_name, salary, salary*3) as "Мечты о зарплате"
+FROM employees;

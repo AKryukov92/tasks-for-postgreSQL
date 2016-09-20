@@ -1,7 +1,12 @@
-SELECT
- last_name as "Фамилия"
- , hire_date as "Дата найма"
- , trim(to_char((hire_date + '6 months'::interval)::date + 8 - extract(dow from hire_date + '6 months'::interval)::integer , 'Day'))
- || trim(to_char((hire_date + '6 months'::interval)::date + 8 - extract(dow from hire_date + '6 months'::interval)::integer, ', the DD of Month'))
- || to_char((hire_date + '6 months'::interval)::date + 8 - extract(dow from hire_date + '6 months'::interval)::integer, ', YYYY') as "Дата аттестации"
-FROM employees;
+SELECT 
+ job_id as "Должность"
+, CASE job_id
+    WHEN 'AD_PRES' THEN 'A'
+	WHEN 'ST_MAN' THEN 'B'
+	WHEN 'IT_PROG' THEN 'C'
+	WHEN 'SA_REP' THEN 'D'
+	WHEN 'ST_CLERK' THEN 'E'
+	ELSE '0'
+  END AS "Категория"
+FROM employees
+ORDER BY job_id;

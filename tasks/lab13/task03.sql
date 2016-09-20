@@ -1,1 +1,2 @@
-SET TIME ZONE 'US/Pacific';
+SELECT last_name, extract(year from hire_date)
+FROM employees;

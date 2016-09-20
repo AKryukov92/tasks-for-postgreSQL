@@ -1,6 +1,6 @@
 SELECT
- employee_id as "Код сотрудника"
- , last_name as "Фамилия"
- , salary as "Зарплата"
- , round(salary * 1.155) - salary as "Разница"
-FROM employees;
+ last_name as "Фамилия"
+ , char_length(last_name) as "Длина фамилии"
+FROM employees
+WHERE substring(last_name from 1 for 1) IN ('J','A','M')
+ORDER BY last_name;

@@ -1,3 +1,4 @@
 SELECT
- format('%s зарабатывает %s ежемесячно, но мечает о %s', last_name, salary, salary*3) as "Мечты о зарплате"
+ last_name as "Фамилия"
+ , COALESCE(commission_pct::text, 'отсутствует') as "Комиссия"
 FROM employees;

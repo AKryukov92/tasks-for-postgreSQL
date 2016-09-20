@@ -1,4 +1,3 @@
 SELECT
- last_name as "Фамилия"
- , lpad(salary::text, 15, '*') as "Зарплата"
+ last_name || rpad(' ', round(salary/1000)::integer, '*')  as "Сотрудники и зарплаты" 
 FROM employees;

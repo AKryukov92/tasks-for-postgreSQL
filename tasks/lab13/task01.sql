@@ -1,1 +1,1 @@
-SET SESSION datestyle TO postgres, ymd;
+SELECT current_date;

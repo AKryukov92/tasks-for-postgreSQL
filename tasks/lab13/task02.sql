@@ -1,3 +1,6 @@
-SELECT name, utc_offset
-FROM pg_timezone_names
-WHERE name IN ('Europe/Moscow', 'Asia/Omsk', 'US/Pacific');
+SELECT
+ last_name as "Фамилия"
+ , hire_date as "Дата найма"
+ , to_char(hire_date, 'Day') as "День недели"
+FROM employees
+ORDER BY "День недели";
