@@ -113,8 +113,12 @@ locale information
 timestamp type
 timestamp operations
 
-2-6
+2-6 (-)
 complex select conditions
+
+?-? windowing functions
+lag, lead
+whitelist+star join
 
 2-7
 hierarchical query
@@ -122,8 +126,3 @@ recursive queries
 
 2-8
 where regexp
-
-
-?-? windowing functions
-lag, lead
-whitelist+star join
